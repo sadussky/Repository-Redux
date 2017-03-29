@@ -1,0 +1,2374 @@
+/**
+ * Created by mac on 2017/3/29.
+ */
+
+
+{
+  "kind": "Listing",
+  "data": {
+    "modhash": "",
+    "children": [
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "622qwc",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 14,
+          "report_reasons": null,
+          "author": "undershaft",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_622qwc",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "engineering.musefind.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?s=33a61d9eeb7ee93cc0dbbbc7f0caea8e",
+                  "width": 1200,
+                  "height": 480
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=be92fdd3311276eecdd9113a233f192e",
+                    "width": 108,
+                    "height": 43
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=b802f559dba9eaff1c3781b8af0616d6",
+                    "width": 216,
+                    "height": 86
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=0c157e1def425c58c501991b089cee67",
+                    "width": 320,
+                    "height": 128
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=e16502dbba7dab74a4684f3673f0c042",
+                    "width": 640,
+                    "height": 256
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=1816c5b178af5843ec7af249f7f38010",
+                    "width": 960,
+                    "height": 384
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/OM9FTcr8oblhSIsj1K2Th7OYFQYyOygpK9-XNCOA9JU.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=bd2c6ea1dca04d2b7ec5d918fe23a8b7",
+                    "width": 1080,
+                    "height": 432
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "2i0NkaRillWgPzq15NlIMWpdtc3e8HA7SKe_98Zqzhw"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/r35G2rrvqpFhzG7Zkj3NcB_ZLQw0bnzCP2akKsMDLyI.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/622qwc/react_lifecycle_methods_how_and_when_to_use_them/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490769256.0,
+          "url": "https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "React Lifecycle Methods- how and when to use them",
+          "created_utc": 1490740456.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 14
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61yydd",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 45,
+          "report_reasons": null,
+          "author": "Shmigers",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61yydd",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "github.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/Drp-35eHXdZ2Nrqliog4_Vyt7fP-3jBFTX3YvpmKTzg.jpg?s=406e8ea6cce1fd61ee36526dcc601a33",
+                  "width": 400,
+                  "height": 400
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/Drp-35eHXdZ2Nrqliog4_Vyt7fP-3jBFTX3YvpmKTzg.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=9c236ea195f1add8c31f35ba8ac10b48",
+                    "width": 108,
+                    "height": 108
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Drp-35eHXdZ2Nrqliog4_Vyt7fP-3jBFTX3YvpmKTzg.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=d2f18db29c024fba885fdb009b9c0567",
+                    "width": 216,
+                    "height": 216
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Drp-35eHXdZ2Nrqliog4_Vyt7fP-3jBFTX3YvpmKTzg.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=7b843fb91e8613ccf2fcde4ba1f98d71",
+                    "width": 320,
+                    "height": 320
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "5bdimuBYG7vCBpZQhI9RF5V9gT6CiF7OqvbxIurFAFM"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/3U3yIq2muFL1eMYe7dxIJckgeNyZ6Ent8mj9HVkNcGE.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61yydd/redux_offline/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490731923.0,
+          "url": "https://github.com/jevakallio/redux-offline",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Redux Offline",
+          "created_utc": 1490703123.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 2,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 45
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61z481",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 13,
+          "report_reasons": null,
+          "author": "cagataycivici",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61z481",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "primefaces.org",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/ODvfdyRAc368vwcP6WIZtZFbDOT7sTvC-LF5zHyc80g.jpg?s=5a6941b47761ba69dc3fd976a3d3db88",
+                  "width": 200,
+                  "height": 181
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/ODvfdyRAc368vwcP6WIZtZFbDOT7sTvC-LF5zHyc80g.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=d3528e8f5373acb200df7546f9059312",
+                    "width": 108,
+                    "height": 97
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "glyj1_I4JF2qkLBSGdNBKLU_MnMOedCNadNLYmhnSP4"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/52x0tKMsAOLa3K8gT2nUK8czlcNn7x4QjTgd6lLjZQU.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61z481/primereact_ui_library_released_with_40_open/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490734001.0,
+          "url": "https://www.primefaces.org/primereact-1-0-0-alpha-1-released/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "PrimeReact UI Library Released with 40+ Open Source Components",
+          "created_utc": 1490705201.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 17,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 13
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "620ay8",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 5,
+          "report_reasons": null,
+          "author": "verbalcontract",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_620ay8",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "tech.okcupid.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?s=491dcb941b6113836b2401f0b6bee2e2",
+                  "width": 2000,
+                  "height": 993
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=3c6d2f1ae0225c4c089f76742806d727",
+                    "width": 108,
+                    "height": 53
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=3c63674113b46cd58c8d6a985194f97f",
+                    "width": 216,
+                    "height": 107
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=51d2f093624adbf28a04e9b3f96232a9",
+                    "width": 320,
+                    "height": 158
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=de7ade92de1e4f7bc47e1f5653c3aff6",
+                    "width": 640,
+                    "height": 317
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=837417adb07e76718ca19d40154c35e3",
+                    "width": 960,
+                    "height": 476
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/Y68ezK0wKlSXNNDs5oJSLId0iHSWbz-jgmetBTXEG7E.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=8b9925247e82d6529a546e513ec792e9",
+                    "width": 1080,
+                    "height": 536
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "Bx5HgzTQWswAsBDvuB7frYamItL12qIUtvyjJdXwzW0"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/5TVIz4edJOcORH3iTOJsuGV6qjip-K9M1zPX7UATC6s.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/620ay8/working_on_okcupid_in_production_with_webpack_and/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490746323.0,
+          "url": "https://tech.okcupid.com/working-on-okcupid-in-production-with-webpack-and-localhost/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Working on OkCupid \"in production\" with Webpack and localhost",
+          "created_utc": 1490717523.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 5
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61zhn2",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 7,
+          "report_reasons": null,
+          "author": "domagoj412",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61zhn2",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "medium.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?s=dd2099b78971c7034d3ce2ebbd6f4973",
+                  "width": 1200,
+                  "height": 660
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=0f04096121fc2b2761180654c253830b",
+                    "width": 108,
+                    "height": 59
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=a0e7f5003c867c12f9b6ef2007619172",
+                    "width": 216,
+                    "height": 118
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=38f232bf9be5379d4be75cb0a84b14c6",
+                    "width": 320,
+                    "height": 176
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=b58972dd659eb7d64d2305d3057a7ea5",
+                    "width": 640,
+                    "height": 352
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=6418555901b0a026fcc8f6f915807300",
+                    "width": 960,
+                    "height": 528
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/zzoU8MlZZe5XVnjgiRTWmStFQ9XxaDuoogN5cQoI6BI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=f34941e635aa152f603e6efda47d5287",
+                    "width": 1080,
+                    "height": 594
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "8yXe7UBrSUz6zb234-MIeOnJ3ANRARmTVqbhfSQYPp4"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/zGlH70EhavlICYzqhQkwCn7u95FCSA956yaNEY8AxiU.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61zhn2/the_grand_react_hotel_beginners_guide_to_react/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490738298.0,
+          "url": "https://medium.com/@domagojk/the-grand-react-hotel-219b4d393261",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "The Grand React Hotel \u2014 Beginner\u2019s guide to React &amp; Redux",
+          "created_utc": 1490709498.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 7
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61z9ky",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 5,
+          "report_reasons": null,
+          "author": "simcptr",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61z9ky",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "daveceddia.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?s=4a5c582f316bc42f77294e3a28516a49",
+                  "width": 1024,
+                  "height": 646
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=2af8bd042e50168197df2abd941b4ae9",
+                    "width": 108,
+                    "height": 68
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=4964eab264274d937aa8e435a4b1396e",
+                    "width": 216,
+                    "height": 136
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=4d8b8e61d5d5f9e53b6a580611474c74",
+                    "width": 320,
+                    "height": 201
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=8a3670694fef0a9f52bdf1da47e005fb",
+                    "width": 640,
+                    "height": 403
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/QdFByUj8xzWlnOBPVkcoXmckoHrb7IM_YjJPkD4wNvk.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=fcf3ae92d25e851b7c83a64a681e6902",
+                    "width": 960,
+                    "height": 605
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "uzaRX-BAA00r5coBPGKavb3aPgd9CM2_SJdIWAaDIHk"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://a.thumbs.redditmedia.com/ULrXpfFY7OUW8miMNI6TJks_ryqM7-A0BOKUQK335g8.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61z9ky/reusable_state_with_higher_order_components/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490735767.0,
+          "url": "https://daveceddia.com/extract-state-with-higher-order-components/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Reusable State with Higher Order Components",
+          "created_utc": 1490706967.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 5
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61xvly",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 13,
+          "report_reasons": null,
+          "author": "katerina-ser60",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61xvly",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "medium.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/dz9fxmgIa7C_krfb3GH7VWuEMTMV9Wm-0e_DP7fHyHs.jpg?s=e6ab09237e6a14f027ef8ba32d0c5ce5",
+                  "width": 620,
+                  "height": 349
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/dz9fxmgIa7C_krfb3GH7VWuEMTMV9Wm-0e_DP7fHyHs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=83f2d7ade39820a7b21573cdfd814b00",
+                    "width": 108,
+                    "height": 60
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/dz9fxmgIa7C_krfb3GH7VWuEMTMV9Wm-0e_DP7fHyHs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=4a2d42a8e3263b3fcbe9d1ecfec3db0d",
+                    "width": 216,
+                    "height": 121
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/dz9fxmgIa7C_krfb3GH7VWuEMTMV9Wm-0e_DP7fHyHs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=7aa73b0e641313364d230923e1d576ac",
+                    "width": 320,
+                    "height": 180
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "Eoy1Iv2qvPdbod9i7Pb6Qz3M089MBl86w21pNBoH0iY"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/nP_c-80ohIuXvoY9_nMaTiinM0mcOiTZ04ieW5S1-wA.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61xvly/setstate_gate_javascript_scene/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490713510.0,
+          "url": "https://medium.com/javascript-scene/setstate-gate-abc10a9b2d82#.ikfrt9fsy",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "setState() Gate \u2013 JavaScript Scene",
+          "created_utc": 1490684710.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 4,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 13
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+            "content": "&lt;iframe width=\"600\" height=\"338\" src=\"https://www.youtube.com/embed/tvy0bSgwtTo?feature=oembed\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;",
+            "width": 600,
+            "scrolling": false,
+            "height": 338
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": {
+            "oembed": {
+              "provider_url": "https://www.youtube.com/",
+              "version": "1.0",
+              "title": "Introduction to Jest testing framework",
+              "thumbnail_width": 480,
+              "height": 338,
+              "width": 600,
+              "html": "&lt;iframe width=\"600\" height=\"338\" src=\"https://www.youtube.com/embed/tvy0bSgwtTo?feature=oembed\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;",
+              "author_name": "ANZ Coders",
+              "provider_name": "YouTube",
+              "thumbnail_url": "https://i.ytimg.com/vi/tvy0bSgwtTo/hqdefault.jpg",
+              "type": "video",
+              "thumbnail_height": 360,
+              "author_url": "https://www.youtube.com/channel/UCIVu42Uk-a6oFAflal8O-ag"
+            },
+            "type": "youtube.com"
+          },
+          "link_flair_text": null,
+          "id": "621zcu",
+          "gilded": 0,
+          "secure_media_embed": {
+            "content": "&lt;iframe width=\"600\" height=\"338\" src=\"https://www.youtube.com/embed/tvy0bSgwtTo?feature=oembed\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;",
+            "width": 600,
+            "scrolling": false,
+            "height": 338
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "Von_vorgen",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_621zcu",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "youtube.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/-u1QaLykA56eDSDJnMMn-2MmDOkRCV-hHDpZqjdyFxs.jpg?s=ee78435800d0cf0feba92da79a1b3b46",
+                  "width": 480,
+                  "height": 360
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/-u1QaLykA56eDSDJnMMn-2MmDOkRCV-hHDpZqjdyFxs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=10535c0487a89bbde1af7b48f909be0c",
+                    "width": 108,
+                    "height": 81
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-u1QaLykA56eDSDJnMMn-2MmDOkRCV-hHDpZqjdyFxs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=b5eb58857a95d8bff98ef06444d7859b",
+                    "width": 216,
+                    "height": 162
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-u1QaLykA56eDSDJnMMn-2MmDOkRCV-hHDpZqjdyFxs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=7fa9e43f2da793b4b32c3bc3af4b3487",
+                    "width": 320,
+                    "height": 240
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "U6WV-eaS-EpLLm0-9PPzteCpzVivUZ_2701eQA4E_vA"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://a.thumbs.redditmedia.com/ejG1NKxQOV9kX8GAJIlvCQ01Ec_5BzkqlAr7nMzPcI4.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "rich:video",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/621zcu/introduction_to_jest_testing_framework/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490761744.0,
+          "url": "https://www.youtube.com/watch?v=tvy0bSgwtTo",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Introduction to Jest testing framework",
+          "created_utc": 1490732944.0,
+          "distinguished": null,
+          "media": {
+            "oembed": {
+              "provider_url": "https://www.youtube.com/",
+              "version": "1.0",
+              "title": "Introduction to Jest testing framework",
+              "thumbnail_width": 480,
+              "height": 338,
+              "width": 600,
+              "html": "&lt;iframe width=\"600\" height=\"338\" src=\"https://www.youtube.com/embed/tvy0bSgwtTo?feature=oembed\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;",
+              "author_name": "ANZ Coders",
+              "provider_name": "YouTube",
+              "thumbnail_url": "https://i.ytimg.com/vi/tvy0bSgwtTo/hqdefault.jpg",
+              "type": "video",
+              "thumbnail_height": 360,
+              "author_url": "https://www.youtube.com/channel/UCIVu42Uk-a6oFAflal8O-ag"
+            },
+            "type": "youtube.com"
+          },
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61wwri",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 25,
+          "report_reasons": null,
+          "author": "glify",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61wwri",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "medium.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/pbK_79YJQwcg_eVVVMCCGEh61ihV0HkSxK2bmihQZMM.jpg?s=6eaffc4c46ffe6635fa65382df3571a8",
+                  "width": 500,
+                  "height": 500
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/pbK_79YJQwcg_eVVVMCCGEh61ihV0HkSxK2bmihQZMM.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=71b91ebe7f0cc95a25903b6941eee438",
+                    "width": 108,
+                    "height": 108
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/pbK_79YJQwcg_eVVVMCCGEh61ihV0HkSxK2bmihQZMM.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=86ef4ba24b4fbbf178579cad84a087e9",
+                    "width": 216,
+                    "height": 216
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/pbK_79YJQwcg_eVVVMCCGEh61ihV0HkSxK2bmihQZMM.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=9545f71b587651aad384a54c19e148b6",
+                    "width": 320,
+                    "height": 320
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "Jy7ZrvZt9LD8DbfYEJp5SfA5qd6rwWF-uicK8ZpyOZ0"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/SM4Ow3qTmpLMDrP_rUFMotuYoMSAYAb9MPI1LXCOtlQ.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61wwri/functional_composition_of_react_components/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490699280.0,
+          "url": "https://medium.com/@mjewell/functional-composition-of-react-components-527f6930a42",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Functional Composition of React Components",
+          "created_utc": 1490670480.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 25
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;So I am pretty new to both React and JavaScript, and I&amp;#39;m working on a project where I need a wizard-form. I then started using redux-form, to make the job easier. But I am struggling with creating dynamic input fields based on a select list. I don&amp;#39;t know if this is a problem due to my lack of JS knowledge, or if it&amp;#39;s specific to redux-form.&lt;/p&gt;\n\n&lt;p&gt;Intended function is that when choosing 3 in the dropdown list, I will get 3 input fields. I am now able to do this, but only by using a button to update. I don&amp;#39;t know how to do this without using a button.&lt;/p&gt;\n\n&lt;p&gt;I am using a formValueSelector, because I need to do this in another part of the wizard form also.&lt;/p&gt;\n\n&lt;p&gt;I think I would be able to do this, if my Page component was a class with states, but I don&amp;#39;t know if I can do this together with redux-form. Any tips?&lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;let renderParts = ({fields, n}) =&amp;gt; {\n    function update(n) {\n        n = Number(n);\n        let arr = Array(n).fill(0);\n        fields.removeAll();\n        arr.map(index =&amp;gt;\n        fields.push({})\n        )\n    }\n\n    return (\n    &amp;lt;div&amp;gt;\n        &amp;lt;button type=&amp;quot;button&amp;quot; onClick={() =&amp;gt; update(n) }&amp;gt;Update&amp;lt;/button&amp;gt;\n        &amp;lt;ul className=&amp;quot;list-inline&amp;quot;&amp;gt;\n            {fields.map((parts, index) =&amp;gt;\n                &amp;lt;li key={index}&amp;gt;\n                    &amp;lt;Field name={`${parts}.partLength`} type=&amp;quot;number&amp;quot; component={renderField}/&amp;gt;\n                &amp;lt;/li&amp;gt;\n            )}\n        &amp;lt;/ul&amp;gt;\n    &amp;lt;/div&amp;gt;\n    )\n};\n\nlet Page = (props) =&amp;gt; {\n    const { handleSubmit, numFields } = props;\n  return (\n    &amp;lt;form className=&amp;quot;form-horizontal&amp;quot; onSubmit={handleSubmit}&amp;gt;\n          &amp;lt;Field name=&amp;quot;numFields&amp;quot; component=&amp;quot;select&amp;quot; &amp;gt;\n            &amp;lt;option value=&amp;quot;1&amp;quot;&amp;gt;1&amp;lt;/option&amp;gt;\n            &amp;lt;option value=&amp;quot;2&amp;quot;&amp;gt;2&amp;lt;/option&amp;gt;\n            &amp;lt;option value=&amp;quot;3&amp;quot;&amp;gt;3&amp;lt;/option&amp;gt;\n            &amp;lt;option value=&amp;quot;4&amp;quot;&amp;gt;4&amp;lt;/option&amp;gt;\n            &amp;lt;option value=&amp;quot;5&amp;quot;&amp;gt;5&amp;lt;/option&amp;gt;\n            &amp;lt;option value=&amp;quot;6&amp;quot;&amp;gt;6&amp;lt;/option&amp;gt;\n          &amp;lt;/Field&amp;gt;\n        &amp;lt;FieldArray name=&amp;quot;parts&amp;quot; component={renderParts} n={numFields}/&amp;gt;\n    &amp;lt;/form&amp;gt;\n );\n};\n\nPage = reduxForm({\n    form: &amp;#39;wizard&amp;#39;,\n    destroyOnUnmount: false,\n    forceUnregisterOnUnmount: true\n})(Page);\n\nconst selector = formValueSelector(&amp;#39;wizard&amp;#39;)\nPage = connect(\n    state =&amp;gt; {\n        const numFields = selector(state, &amp;#39;numFields&amp;#39;);\n        return {\n            numFields\n        }\n\n    }\n)(Page)\n\nexport default Page;\n&lt;/code&gt;&lt;/pre&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "So I am pretty new to both React and JavaScript, and I'm working on a project where I need a wizard-form. I then started using redux-form, to make the job easier. But I am struggling with creating dynamic input fields based on a select list. I don't know if this is a problem due to my lack of JS knowledge, or if it's specific to redux-form.\n\nIntended function is that when choosing 3 in the dropdown list, I will get 3 input fields. I am now able to do this, but only by using a button to update. I don't know how to do this without using a button.\n\nI am using a formValueSelector, because I need to do this in another part of the wizard form also.\n\nI think I would be able to do this, if my Page component was a class with states, but I don't know if I can do this together with redux-form. Any tips?\n\n    let renderParts = ({fields, n}) =&gt; {\n        function update(n) {\n            n = Number(n);\n            let arr = Array(n).fill(0);\n            fields.removeAll();\n            arr.map(index =&gt;\n            fields.push({})\n            )\n        }\n\n        return (\n        &lt;div&gt;\n            &lt;button type=\"button\" onClick={() =&gt; update(n) }&gt;Update&lt;/button&gt;\n            &lt;ul className=\"list-inline\"&gt;\n                {fields.map((parts, index) =&gt;\n                    &lt;li key={index}&gt;\n                        &lt;Field name={`${parts}.partLength`} type=\"number\" component={renderField}/&gt;\n                    &lt;/li&gt;\n                )}\n            &lt;/ul&gt;\n        &lt;/div&gt;\n        )\n    };\n\n    let Page = (props) =&gt; {\n        const { handleSubmit, numFields } = props;\n      return (\n        &lt;form className=\"form-horizontal\" onSubmit={handleSubmit}&gt;\n              &lt;Field name=\"numFields\" component=\"select\" &gt;\n                &lt;option value=\"1\"&gt;1&lt;/option&gt;\n                &lt;option value=\"2\"&gt;2&lt;/option&gt;\n                &lt;option value=\"3\"&gt;3&lt;/option&gt;\n                &lt;option value=\"4\"&gt;4&lt;/option&gt;\n                &lt;option value=\"5\"&gt;5&lt;/option&gt;\n                &lt;option value=\"6\"&gt;6&lt;/option&gt;\n              &lt;/Field&gt;\n            &lt;FieldArray name=\"parts\" component={renderParts} n={numFields}/&gt;\n        &lt;/form&gt;\n     );\n    };\n\n    Page = reduxForm({\n        form: 'wizard',\n        destroyOnUnmount: false,\n        forceUnregisterOnUnmount: true\n    })(Page);\n\n    const selector = formValueSelector('wizard')\n    Page = connect(\n        state =&gt; {\n            const numFields = selector(state, 'numFields');\n            return {\n                numFields\n            }\n\n        }\n    )(Page)\n\n    export default Page;",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "621i0a",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "steinyo",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_621i0a",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/621i0a/need_help_with_creating_dynamic_input_fields_in/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490757207.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/621i0a/need_help_with_creating_dynamic_input_fields_in/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Need help with creating dynamic input fields in React with redux-form",
+          "created_utc": 1490728407.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 1,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61xh6i",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 10,
+          "report_reasons": null,
+          "author": "nomcopter",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61xh6i",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "github.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/ai5V5Lf7uQNUw0dL61c3uQf4IdMK_qHW3wUP7623iMw.jpg?s=a4033f5ed69742546307e2a00386dcb9",
+                  "width": 400,
+                  "height": 400
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/ai5V5Lf7uQNUw0dL61c3uQf4IdMK_qHW3wUP7623iMw.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=fd586b644ebc471d6f80f7d571eb8fbd",
+                    "width": 108,
+                    "height": 108
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/ai5V5Lf7uQNUw0dL61c3uQf4IdMK_qHW3wUP7623iMw.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=2478e4e2e1be03de6882d5471f582b94",
+                    "width": 216,
+                    "height": 216
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/ai5V5Lf7uQNUw0dL61c3uQf4IdMK_qHW3wUP7623iMw.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=a564e29c667fe27b29b96bad1a4665c4",
+                    "width": 320,
+                    "height": 320
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "AwQYcDIyVlx_DDZ1YhOe0DJvq1rmXh7XnvqQE56MScI"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/bBulbuWGmgAOcFRSsrzcsvmPd8pQhe_7uAxC9c3-FLw.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61xh6i/reactmosaic_tiling_window_manager/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490707016.0,
+          "url": "https://github.com/palantir/react-mosaic",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "react-mosaic: Tiling Window Manager",
+          "created_utc": 1490678216.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 6,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 10
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Why is it doing this? I am using middleware thunk and i am utilizing redux together with react.&lt;/p&gt;\n\n&lt;p&gt;Here is the code: &lt;/p&gt;\n\n&lt;p&gt;actions.js&lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;    import axios from &amp;#39;axios&amp;#39;;\n\n\n    export const actionGallery = (url) =&amp;gt; {\n      let jarWiki = &amp;#39;https://en.wikipedia.org/wiki/JAR_&amp;#39;;\n      let images = &amp;#39;../images&amp;#39;\n      const request = axios.get(url);\n\n      return (dispatch) =&amp;gt; {\n\n        request.then(res =&amp;gt; {\n          dispatch({\n            type: SHOW_GALLERY,\n            data: res\n          })\n        })\n        .catch(err =&amp;gt; console.error(err))\n         }\n        }\n&lt;/code&gt;&lt;/pre&gt;\n\n&lt;p&gt;reducer.js&lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;export function showGallery(state, action) {\n      switch(action.type) {\n        case SHOW_GALLERY:\n        if (state) {\n          return action.data;\n        }\n          break;\n        default:\n          return state;\n          break;\n        }\n      }\n&lt;/code&gt;&lt;/pre&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "Why is it doing this? I am using middleware thunk and i am utilizing redux together with react.\n\nHere is the code: \n\nactions.js\n \n        import axios from 'axios';\n    \n    \n        export const actionGallery = (url) =&gt; {\n          let jarWiki = 'https://en.wikipedia.org/wiki/JAR_';\n          let images = '../images'\n          const request = axios.get(url);\n        \n          return (dispatch) =&gt; {\n        \n            request.then(res =&gt; {\n              dispatch({\n                type: SHOW_GALLERY,\n                data: res\n              })\n            })\n            .catch(err =&gt; console.error(err))\n             }\n            }\n    \nreducer.js\n    \n    export function showGallery(state, action) {\n          switch(action.type) {\n            case SHOW_GALLERY:\n            if (state) {\n              return action.data;\n            }\n              break;\n            default:\n              return state;\n              break;\n            }\n          }",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "62114i",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "LuCas23332",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_62114i",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/62114i/reactredux_middleware_thunk_keeps_executing/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490752944.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/62114i/reactredux_middleware_thunk_keeps_executing/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "React-redux, middleware thunk keeps executing action creator function repeatedly",
+          "created_utc": 1490724144.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 1,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "620rt0",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "bstachenfeld",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_620rt0",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "blog.filestack.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?s=281605237184bf3971a7b6214819e6b2",
+                  "width": 1544,
+                  "height": 908
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=7623096fb2fcff25716cbe8d204a1f64",
+                    "width": 108,
+                    "height": 63
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=d422171f6612a2c42c376014d528cf77",
+                    "width": 216,
+                    "height": 127
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=869d45e03e02f50b225cb5055c91910e",
+                    "width": 320,
+                    "height": 188
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=5543689ee000dc0b6c50ac31d05fa3fa",
+                    "width": 640,
+                    "height": 376
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=aa2e4e44d5c6065b4f3fefb3722ca35c",
+                    "width": 960,
+                    "height": 564
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/lAYVYGrerH4laob-VU57Y6k_xPjs4Vs785Jxk2AZuv8.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=f23448c44085a9830f1d62cfa0558276",
+                    "width": 1080,
+                    "height": 635
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "FBiLhdckzHTPvnD3SbFcUJ-F5F9MQULAjY4DiJkmqG8"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/F3QTVUht_QY87w21CT_p7molYq36LGaKkIUTiUZ9G7Y.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/620rt0/build_an_imagetoascii_art_app_in_react_filestack/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490750574.0,
+          "url": "http://blog.filestack.com/tutorials/ascii-art-react/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Build an Image-to-ASCII Art App in React \u2022 Filestack Blog",
+          "created_utc": 1490721774.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 2,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;i have a fairly big state, maybe like 2, 3 levels deep but with fiarly simple objects and arrays of objects, in one of the components. when i need to modify one of its deep entities, would it be better to clone it and then modify the clone or modify the entity in the existing state and resetting it?\nin other words&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;const clonedVouchers = this.state.vouchers.slice(0);&lt;/code&gt;\n&lt;code&gt;const voucher = clonedVouchers.find(c =&amp;gt; c.number === value);&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;//voucher.modify something&lt;/code&gt;\n&lt;code&gt;...&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;this.setState({vouchers: clonedVouchers});&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;or&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;const voucher = this.state.vouchers.find(c =&amp;gt; c.number === value);&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;//voucher.modify something&lt;/code&gt;\n&lt;code&gt;...&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;&lt;code&gt;this.setState({vouchers});&lt;/code&gt;&lt;/p&gt;\n\n&lt;p&gt;I always tend to clone, hoping i will switch to using ImmutableJS very soon.\nAlso, how can i see the performance impact of each approach in chrome dev tools for example?&lt;/p&gt;\n\n&lt;p&gt;edit:formatting&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "i have a fairly big state, maybe like 2, 3 levels deep but with fiarly simple objects and arrays of objects, in one of the components. when i need to modify one of its deep entities, would it be better to clone it and then modify the clone or modify the entity in the existing state and resetting it?\nin other words\n\n`const clonedVouchers = this.state.vouchers.slice(0);`\n`const voucher = clonedVouchers.find(c =&gt; c.number === value);`\n\n`//voucher.modify something`\n`...`\n\n`this.setState({vouchers: clonedVouchers});`\n\nor\n\n`const voucher = this.state.vouchers.find(c =&gt; c.number === value);`\n\n`//voucher.modify something`\n`...`\n\n`this.setState({vouchers});`\n\n\nI always tend to clone, hoping i will switch to using ImmutableJS very soon.\nAlso, how can i see the performance impact of each approach in chrome dev tools for example?\n\nedit:formatting",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61yhvn",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 2,
+          "report_reasons": null,
+          "author": "anonymous_alien",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61yhvn",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61yhvn/not_using_immutablejs_is_it_good_practice_to/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490724983.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61yhvn/not_using_immutablejs_is_it_good_practice_to/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "not using immutableJS, is it good practice to modify state's deep entities without cloning?",
+          "created_utc": 1490696183.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 4,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 2
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61rbzz",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 69,
+          "report_reasons": null,
+          "author": "Shmigers",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61rbzz",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "zeit.co",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?s=0c773d717ab861271ba49cbb0c5d8e83",
+                  "width": 1168,
+                  "height": 748
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=9ad7e7e557abaede7e03bf6caf47fc9f",
+                    "width": 108,
+                    "height": 69
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=f8290543dfa792e347465280b379085c",
+                    "width": 216,
+                    "height": 138
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=a27684b988545345332c445d9fa30bc6",
+                    "width": 320,
+                    "height": 204
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=14a4c483b0ebfdd1ed5a3fbc238d2dad",
+                    "width": 640,
+                    "height": 409
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=b7b212611c6b91c3558087fa6f079dc5",
+                    "width": 960,
+                    "height": 614
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/-S4ILaEwJJbUHusjfeRDJV7f2Lt9T4CU_GqPNd4lMzQ.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=5e2078cb40c27d0fa2393ec1695da9dc",
+                    "width": 1080,
+                    "height": 691
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "83-k24HeTNkprAEfvHlv6cK0O982TJX2BZF1NOgPwIE"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/BrjfNrKy1BkyVbglhVNNRMeOtsMWmtd9XH7IjLGPokc.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61rbzz/nextjs_2/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490638837.0,
+          "url": "https://zeit.co/blog/next2",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Nextjs 2",
+          "created_utc": 1490610037.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 18,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 69
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Is it possible to have a checkbox group? where only 1 can be checked or all unchecked. It seems that with input radios in a group initially none can be checked but once selected, one has to be checked. i.e you can&amp;#39;t toggle it back off?&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "Is it possible to have a checkbox group? where only 1 can be checked or all unchecked. It seems that with input radios in a group initially none can be checked but once selected, one has to be checked. i.e you can't toggle it back off?",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61wvho",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 3,
+          "report_reasons": null,
+          "author": "Pizdetss",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61wvho",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61wvho/input_checkbox_group/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490698871.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61wvho/input_checkbox_group/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "input checkbox group",
+          "created_utc": 1490670071.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 2,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 3
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;I&amp;#39;m looking to build a job board, with user profiles, and the developer I&amp;#39;m looking to hire suggested using react.js because it will be easier to build a native mobile application. Is the development team right? What else should I know before signing the contract about react.js?&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "I'm looking to build a job board, with user profiles, and the developer I'm looking to hire suggested using react.js because it will be easier to build a native mobile application. Is the development team right? What else should I know before signing the contract about react.js?",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61udg5",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 11,
+          "report_reasons": null,
+          "author": "ineedhelpcoding",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61udg5",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61udg5/i_talked_to_a_developer_and_he_suggested_using/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490671921.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61udg5/i_talked_to_a_developer_and_he_suggested_using/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "I talked to a developer and he suggested using react.js to build an application and mobile app to \"cut costs\". is he right?",
+          "created_utc": 1490643121.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 35,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 11
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Hi guys,&lt;/p&gt;\n\n&lt;p&gt;I am fairly new to ReactJS (been learning it for about 6 months now), and would like to pair up with some people to share code reviews.&lt;/p&gt;\n\n&lt;p&gt;I&amp;#39;ve recently finished a small hobby app with react and I am looking for feedback - specifically anti-patterns and unit testing. That being said, any constructive feedback or criticism is more than welcome&lt;/p&gt;\n\n&lt;p&gt;As I know that this takes a lot of time and effort, I am prepared to return the favor by doing a code review on one of your own projects.&lt;/p&gt;\n\n&lt;p&gt;If anyone would like to take a look here is the gitHub repo:\n&lt;a href=\"https://github.com/Shooshte/teaTimer\"&gt;https://github.com/Shooshte/teaTimer&lt;/a&gt;&lt;/p&gt;\n\n&lt;p&gt;I apologise if this is not the correct subreddit - please point me in the right direction or suggest a community I can join.&lt;/p&gt;\n\n&lt;p&gt;Happy coding!&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "Hi guys,\n\nI am fairly new to ReactJS (been learning it for about 6 months now), and would like to pair up with some people to share code reviews.\n\nI've recently finished a small hobby app with react and I am looking for feedback - specifically anti-patterns and unit testing. That being said, any constructive feedback or criticism is more than welcome\n\nAs I know that this takes a lot of time and effort, I am prepared to return the favor by doing a code review on one of your own projects.\n\nIf anyone would like to take a look here is the gitHub repo:\nhttps://github.com/Shooshte/teaTimer\n\nI apologise if this is not the correct subreddit - please point me in the right direction or suggest a community I can join.\n\nHappy coding!",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61y04r",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "Shooshte",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61y04r",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/MvbOhv_fcYfQzOFX_G1FPKT3KqHhlPsK0kwF-crCrK4.jpg?s=ca0e622d0c1c15bbe4280870ebab81f3",
+                  "width": 400,
+                  "height": 400
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/MvbOhv_fcYfQzOFX_G1FPKT3KqHhlPsK0kwF-crCrK4.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=8249d655367f848157986eef252c4c9f",
+                    "width": 108,
+                    "height": 108
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/MvbOhv_fcYfQzOFX_G1FPKT3KqHhlPsK0kwF-crCrK4.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=b2e44598a31346e494e091fd9590eb89",
+                    "width": 216,
+                    "height": 216
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/MvbOhv_fcYfQzOFX_G1FPKT3KqHhlPsK0kwF-crCrK4.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=e0f436519f6dba6ecd742f658bb28e08",
+                    "width": 320,
+                    "height": 320
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "d1rnozRrPYehC5cTgLTQeq2Eb52MbfLL4j4IioFEvC8"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "self",
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61y04r/searching_for_a_react_code_review_partnerstudy/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490715752.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61y04r/searching_for_a_react_code_review_partnerstudy/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Searching for a React code review partner/study group",
+          "created_utc": 1490686952.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 2,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61tnti",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 10,
+          "report_reasons": null,
+          "author": "markocen",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61tnti",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "github.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/00kjBOADuM988DjqDlgsT8s0I7y1Wvx0vhOwSWtT4_c.jpg?s=b3169d53e17be22a1e2f88a8f23a072f",
+                  "width": 218,
+                  "height": 218
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/00kjBOADuM988DjqDlgsT8s0I7y1Wvx0vhOwSWtT4_c.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=0660d8e941d97fdd145e181725648c72",
+                    "width": 108,
+                    "height": 108
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/00kjBOADuM988DjqDlgsT8s0I7y1Wvx0vhOwSWtT4_c.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=04e7841efb8cffd1a9437121551fd239",
+                    "width": 216,
+                    "height": 216
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "_S7tqIInco6P6-2g4lw8zTfW-Yahe-ASDF62feJr8S4"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/ad2jqFHBjHyPEv0BYdQtMBLVxakK8gn87no8rnpqGUU.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61tnti/blurred_progressive_image_loader_for_react/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490665216.0,
+          "url": "https://github.com/MarkoCen/react-blur-image-loader",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Blurred progressive image loader for React",
+          "created_utc": 1490636416.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 2,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 10
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61tvu7",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 5,
+          "report_reasons": null,
+          "author": "wdpttt",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61tvu7",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "hackhat.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?s=ae3683fceaba9dfc94e0787853326aab",
+                  "width": 1920,
+                  "height": 1222
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=f9a84b3a23ec2bb8445fa5e4f8f088e8",
+                    "width": 108,
+                    "height": 68
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=a08db087672073e3df0a6a423303d573",
+                    "width": 216,
+                    "height": 137
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=b86cd77d98f81a2da441b140b0cedbd7",
+                    "width": 320,
+                    "height": 203
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=4f9f7ea12c003d955e57803f3495cb7f",
+                    "width": 640,
+                    "height": 407
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=b1eec2c08cf8a4fa46d8ba400aeda3a1",
+                    "width": 960,
+                    "height": 611
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/rdkgfOukOs3q_1TRCWSeGFuZGT6Yn-U2CNTiuXFushs.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=dd88c84317eceee6aedee78985185ec5",
+                    "width": 1080,
+                    "height": 687
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "dRxwSGy8Ip8DI_smCeuGro2VBpMDKbaFvvfEywq-rQQ"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/RWG8cVTH_HNbc0FBkSorNwurQ7Se9nt9hYDokbIUrgs.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61tvu7/best_practices_with_redux_flow_type_asyncawait/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490667271.0,
+          "url": "http://hackhat.com/p/316/best-practices-with-redux-flow-type-asyncawait-and-a-few-extra-tips/?utm_source=reddit-reactjs",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Best practices with redux, flow type, async/await and a few extra tips",
+          "created_utc": 1490638471.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 7,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 5
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;Hello everyone, I am in the process of learning react to supplement my web applications and I keep coming across the fact that react requires node.js to run. &lt;/p&gt;\n\n&lt;p&gt;excuse my ignorance as this is my first few days learning this library/framework, but I was under the impression that node.js was a back-end framework of javascript. Could someone help me understand how this works? I use primarily python in my back-end and would like to keep it that way, so where does node come into play?&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "Hello everyone, I am in the process of learning react to supplement my web applications and I keep coming across the fact that react requires node.js to run. \n\nexcuse my ignorance as this is my first few days learning this library/framework, but I was under the impression that node.js was a back-end framework of javascript. Could someone help me understand how this works? I use primarily python in my back-end and would like to keep it that way, so where does node come into play?\n\n",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61vpz4",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 2,
+          "report_reasons": null,
+          "author": "Dasnowman1183",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61vpz4",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61vpz4/initial_setup/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490685563.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61vpz4/initial_setup/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "initial setup",
+          "created_utc": 1490656763.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 5,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 2
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61ri4s",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 15,
+          "report_reasons": null,
+          "author": "jacobrask",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61ri4s",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "blog.jakoblind.no",
+          "hidden": false,
+          "thumbnail": "default",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61ri4s/4_questions_to_ask_yourself_when_you_get_stuck/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490641719.0,
+          "url": "http://blog.jakoblind.no/2017/03/27/4-questions-to-ask-yourself-when-you-get-stuck-with-react/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "4 questions to ask yourself when you get stuck with React",
+          "created_utc": 1490612919.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 1,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 15
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61s9nh",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 9,
+          "report_reasons": null,
+          "author": "t0ctt0u",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61s9nh",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "ashishchaudhary.in",
+          "hidden": false,
+          "thumbnail": "default",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61s9nh/using_purecomponent_to_prevent_wasted_renders_in/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490651706.0,
+          "url": "https://ashishchaudhary.in/using-purecomponent-to-prevent-wasted-renders-in-react",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Using Purecomponent To Prevent Wasted Renders In React",
+          "created_utc": 1490622906.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 3,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 9
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": "&lt;!-- SC_OFF --&gt;&lt;div class=\"md\"&gt;&lt;p&gt;So i&amp;#39;m trying to add an accordion into my react app and I am using foundation to style things.&lt;/p&gt;\n\n&lt;p&gt;I copy and pasted this line of code from their doc: &lt;/p&gt;\n\n&lt;pre&gt;&lt;code&gt;&amp;lt;ul className=&amp;quot;accordion&amp;quot; data-accordion&amp;gt;\n  &amp;lt;li className=&amp;quot;accordion-item is-active&amp;quot; data-accordion-item&amp;gt;\n    &amp;lt;a href=&amp;quot;#&amp;quot; className=&amp;quot;accordion-title&amp;quot;&amp;gt;Accordion 1&amp;lt;/a&amp;gt;\n    &amp;lt;div className=&amp;quot;accordion-content&amp;quot; data-tab-content &amp;gt;\n      &amp;lt;p&amp;gt;Panel 1. Lorem ipsum dolor&amp;lt;/p&amp;gt;\n      &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Nowhere to Go&amp;lt;/a&amp;gt;\n    &amp;lt;/div&amp;gt;\n  &amp;lt;/li&amp;gt;\n  &amp;lt;li className=&amp;quot;accordion-item&amp;quot; data-accordion-item&amp;gt;\n    &amp;lt;a href=&amp;quot;#&amp;quot; className=&amp;quot;accordion-title&amp;quot;&amp;gt;Accordion 2&amp;lt;/a&amp;gt;\n    &amp;lt;div className=&amp;quot;accordion-content&amp;quot; data-tab-content&amp;gt;\n      &amp;lt;textarea&amp;gt;&amp;lt;/textarea&amp;gt;\n      &amp;lt;button className=&amp;quot;button&amp;quot;&amp;gt;I do nothing!&amp;lt;/button&amp;gt;\n    &amp;lt;/div&amp;gt;\n  &amp;lt;/li&amp;gt;\n  &amp;lt;li className=&amp;quot;accordion-item&amp;quot; data-accordion-item&amp;gt;\n    &amp;lt;a href=&amp;quot;#&amp;quot; className=&amp;quot;accordion-title&amp;quot;&amp;gt;Accordion 3&amp;lt;/a&amp;gt;\n    &amp;lt;div className=&amp;quot;accordion-content&amp;quot; data-tab-content&amp;gt;\n      Pick a date!\n      &amp;lt;input type=&amp;quot;date&amp;quot;&amp;gt;&amp;lt;/input&amp;gt;\n    &amp;lt;/div&amp;gt;\n  &amp;lt;/li&amp;gt;\n&amp;lt;/ul&amp;gt;\n&lt;/code&gt;&lt;/pre&gt;\n\n&lt;p&gt;And when I run localhost, I can see each accordion but nothing happens when I click on each one.&lt;/p&gt;\n\n&lt;p&gt;I have foundation-sites in my package.json. I dont know what&amp;#39;s causing this issue...&lt;/p&gt;\n&lt;/div&gt;&lt;!-- SC_ON --&gt;",
+          "selftext": "So i'm trying to add an accordion into my react app and I am using foundation to style things.\n\nI copy and pasted this line of code from their doc: \n\n    &lt;ul className=\"accordion\" data-accordion&gt;\n      &lt;li className=\"accordion-item is-active\" data-accordion-item&gt;\n        &lt;a href=\"#\" className=\"accordion-title\"&gt;Accordion 1&lt;/a&gt;\n        &lt;div className=\"accordion-content\" data-tab-content &gt;\n          &lt;p&gt;Panel 1. Lorem ipsum dolor&lt;/p&gt;\n          &lt;a href=\"#\"&gt;Nowhere to Go&lt;/a&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n      &lt;li className=\"accordion-item\" data-accordion-item&gt;\n        &lt;a href=\"#\" className=\"accordion-title\"&gt;Accordion 2&lt;/a&gt;\n        &lt;div className=\"accordion-content\" data-tab-content&gt;\n          &lt;textarea&gt;&lt;/textarea&gt;\n          &lt;button className=\"button\"&gt;I do nothing!&lt;/button&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n      &lt;li className=\"accordion-item\" data-accordion-item&gt;\n        &lt;a href=\"#\" className=\"accordion-title\"&gt;Accordion 3&lt;/a&gt;\n        &lt;div className=\"accordion-content\" data-tab-content&gt;\n          Pick a date!\n          &lt;input type=\"date\"&gt;&lt;/input&gt;\n        &lt;/div&gt;\n      &lt;/li&gt;\n    &lt;/ul&gt;\n\nAnd when I run localhost, I can see each accordion but nothing happens when I click on each one.\n\nI have foundation-sites in my package.json. I dont know what's causing this issue...",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61w1n3",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 1,
+          "report_reasons": null,
+          "author": "name_is_Syn",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61w1n3",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "self.reactjs",
+          "hidden": false,
+          "thumbnail": "self",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "is_self": true,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61w1n3/foundation_accordion_not_working_on_react/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490689191.0,
+          "url": "https://www.reddit.com/r/reactjs/comments/61w1n3/foundation_accordion_not_working_on_react/",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Foundation accordion not working on react?",
+          "created_utc": 1490660391.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 1,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 1
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "contest_mode": false,
+          "banned_by": null,
+          "media_embed": {
+
+          },
+          "subreddit": "reactjs",
+          "selftext_html": null,
+          "selftext": "",
+          "likes": null,
+          "suggested_sort": null,
+          "user_reports": [
+
+          ],
+          "secure_media": null,
+          "link_flair_text": null,
+          "id": "61safm",
+          "gilded": 0,
+          "secure_media_embed": {
+
+          },
+          "clicked": false,
+          "score": 7,
+          "report_reasons": null,
+          "author": "katerina-ser60",
+          "saved": false,
+          "mod_reports": [
+
+          ],
+          "name": "t3_61safm",
+          "subreddit_name_prefixed": "r/reactjs",
+          "approved_by": null,
+          "over_18": false,
+          "domain": "medium.com",
+          "hidden": false,
+          "preview": {
+            "images": [
+              {
+                "source": {
+                  "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?s=0399ef55ea833ae72c01c35f78a530d4",
+                  "width": 1165,
+                  "height": 654
+                },
+                "resolutions": [
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=108&amp;s=1dce1fa24bd89fea28f844f59bfecd58",
+                    "width": 108,
+                    "height": 60
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=216&amp;s=f65df757f0f960978ab123ced6e537bc",
+                    "width": 216,
+                    "height": 121
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=320&amp;s=37c462cced938f57d10398ea69ac2ccb",
+                    "width": 320,
+                    "height": 179
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=640&amp;s=0b1d14333ff830ea7084d0919bd05af7",
+                    "width": 640,
+                    "height": 359
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=960&amp;s=85e622c830f8d1ec336bfe2de1dc7ed5",
+                    "width": 960,
+                    "height": 538
+                  },
+                  {
+                    "url": "https://i.redditmedia.com/n1yGJN2v8xhHudDvIaHTJIEHwPtEWfGev5PPzjSZyNI.jpg?fit=crop&amp;crop=faces%2Centropy&amp;arh=2&amp;w=1080&amp;s=4af1ea09303882ec859f7e3d2b0acf08",
+                    "width": 1080,
+                    "height": 606
+                  }
+                ],
+                "variants": {
+
+                },
+                "id": "uTwf-BN5W5KjGqUN9NVz09zk-T8lXqVwJuk_pjdueVE"
+              }
+            ],
+            "enabled": false
+          },
+          "thumbnail": "https://b.thumbs.redditmedia.com/yA5d7ImNCtZ001WvR0wJI_Nv83Z2t8zdQXSISFjeU7w.jpg",
+          "subreddit_id": "t5_2zldd",
+          "edited": false,
+          "link_flair_css_class": null,
+          "author_flair_css_class": null,
+          "downs": 0,
+          "brand_safe": true,
+          "archived": false,
+          "removal_reason": null,
+          "post_hint": "link",
+          "is_self": false,
+          "hide_score": false,
+          "spoiler": false,
+          "permalink": "/r/reactjs/comments/61safm/build_a_lunch_recommendation_app_react_native/",
+          "num_reports": null,
+          "locked": false,
+          "stickied": false,
+          "created": 1490651953.0,
+          "url": "https://medium.com/react-native-development/build-a-lunch-recommendation-app-react-native-school-fdc05de70811#.polac6z9y",
+          "author_flair_text": null,
+          "quarantine": false,
+          "title": "Build a lunch recommendation app \u2014 React Native School \u2013 React Native Development",
+          "created_utc": 1490623153.0,
+          "distinguished": null,
+          "media": null,
+          "num_comments": 0,
+          "visited": false,
+          "subreddit_type": "public",
+          "ups": 7
+        }
+      }
+    ],
+    "after": "t3_61safm",
+    "before": null
+  }
+}
