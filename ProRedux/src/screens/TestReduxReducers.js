@@ -20,10 +20,10 @@ const store = createStore(
     )
 )
 
-export  function  TestReduxReducers() {
+export function TestReduxReducers() {
     store.dispatch(selectSubreddit('reactjs'));
-    store.dispatch(fetchPosts('reactjs')).then(() =>{
-         console.log("TEST##",`Get state with \n ${JSON.stringify(store.getState())}`);
+    store.dispatch(fetchPosts('reactjs')).then(() => {
+            console.log("TEST##", `Get state with \n ${JSON.stringify(store.getState())}`);
         }
     )
 }
