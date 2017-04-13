@@ -23,7 +23,7 @@ const store = createStore(
 export  function  TestReduxReducers() {
     store.dispatch(selectSubreddit('reactjs'));
     store.dispatch(fetchPosts('reactjs')).then(() =>{
-         console.log(store.getState());
+         console.log("TEST##",`Get state with \n ${JSON.stringify(store.getState())}`);
         }
     )
 }
