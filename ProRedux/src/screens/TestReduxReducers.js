@@ -35,6 +35,7 @@ export function TestReduxReducers() {
         }
     )
 
+
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchProvince()));
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchCity('420000')));
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchArea('421100')));
