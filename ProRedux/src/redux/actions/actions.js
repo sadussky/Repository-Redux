@@ -44,6 +44,19 @@ function receivePosts(subreddit, json) {
     }
 }
 
+function shouldFetchPosts(state, subreddit) {
+    const posts = state.postsBySubreddit[subreddit]
+    if (!posts) {
+        return true
+    } else if (posts.isFetching) {
+        return false
+    } else {
+        return posts.didInvalidate
+    }
+}
+
+
+
 
 // Meet our first thunk action creator!
 // Though its insides are different, you would use it just like any other action creator:
@@ -84,5 +97,21 @@ export function fetchPosts(subreddit) {
 }
 
 
+export function fetchPostsIfNeeded(subreddit) {
+    // Note that the function also receives getState()
+    // which lets you choose what to dispatch next.
+
+    // This is useful for avoiding a network request if
+    // a cached value is already available.
+    return (dispatch, getState) => {
+        if (shouldFetchPosts(getState(), subreddit)) {
+            // Dispatch a thunk from thunk!
+            return dispatch(fetchPosts(subreddit))
+        } else {
+            // Let the calling code know there's nothing to wait for.
+            return Promise.resolve()
+        }
+    }
+}
 
 
