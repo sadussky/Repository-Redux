@@ -22,7 +22,7 @@ import AddTodo from '../containers/AddTodo';
 import VisibleTodoList from '../containers/VisibleTodoList';
 
 
-export  default class App extends Component {
+class App extends Component {
 
 
     render() {
@@ -39,6 +39,9 @@ export  default class App extends Component {
     }
 }
 
+export {
+    App
+}
 
 const styles = StyleSheet.create({
         layout_footer: {
@@ -49,3 +52,4 @@ const styles = StyleSheet.create({
 
     }
 );
+

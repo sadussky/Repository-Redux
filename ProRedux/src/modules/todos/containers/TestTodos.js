@@ -24,6 +24,7 @@ import {
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {todoApp} from '../reducers/reducers';
+import {App} from '../components/App';
 let store = createStore(todoApp);
 
 class TestTodos extends Component {
@@ -37,7 +38,7 @@ class TestTodos extends Component {
             <Provider store={store}>
                 <App />
             </Provider>
-        );
+        )
     }
 }
 

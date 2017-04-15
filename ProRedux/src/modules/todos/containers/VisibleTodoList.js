@@ -4,8 +4,8 @@
 
 
 import {connect} from 'react-redux';
-import { toggleTodo } from '../modules/todos/reducers/reducers'
-import TodoList from '../modules/todos/components/TodoList';
+import {toggleTodo} from '../reducers/reducers'
+import TodoList from '../components/TodoList';
 
 
 const getVisibleTodos = (todos, filter) => {

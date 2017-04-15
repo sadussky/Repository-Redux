@@ -32,8 +32,7 @@ let codePushOptions = {
     installMode: CodePush.InstallMode.ON_NEXT_RESTART
 };
 
-
-export default class ProRedux extends Component {
+class ProRedux extends Component {
 
     constructor(props) {
         super(props);
@@ -47,8 +46,9 @@ export default class ProRedux extends Component {
 
     render() {
         return (
-            <View>
-                <TestTodos/>
+            <View style={{flex:1}}>
+                {/*<TestTodos />*/}
+                <TestSpinner/>
             </View>
         );
     }

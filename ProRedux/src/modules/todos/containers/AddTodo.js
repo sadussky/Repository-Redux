@@ -13,7 +13,7 @@ import  {
 
 import React ,{Component} from 'react';
 import {connect} from 'react-redux';
-import {addTodo} from '../modules/todos/reducers/reducers';
+import {addTodo} from '../reducers/reducers';
 
 
 class AddTodo extends Component {

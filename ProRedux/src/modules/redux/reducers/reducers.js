@@ -14,7 +14,7 @@ import {
     INVALIDATE_SUBREDDIT,
     REQUEST_POSTS,
     RECEIVE_POSTS
-} from '../../modules/redux/actions/actions';
+} from '../actions/actions';
 
 function selectedSubreddit(state = 'reactjs', action) {
     switch (action.type) {

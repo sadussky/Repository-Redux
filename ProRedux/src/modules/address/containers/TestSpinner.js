@@ -30,7 +30,7 @@ class TestSpinner extends Component {
 
 
     render() {
-        return (<View>
+        return (<View  style={{ flex: 1 }}>
             <MenuContext style={{ flex: 1 }}>
                 <TopNavigation/>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}><Text>Hello!</Text></View>
