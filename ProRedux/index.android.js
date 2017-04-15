@@ -27,6 +27,8 @@ import {todoApp} from './src/redux/reducers';
 import App from './src/components/App';
 import CodePush from "react-native-code-push";
 import  {TestReduxReducers} from './src/screens/TestReduxReducers';
+import  {TestSpinner} from './src/screens/TestSpinner';
+
 
 let codePushOptions = {
     checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
@@ -49,7 +51,8 @@ export default class ProRedux extends Component {
     render() {
         return (
             <Provider store={store}>
-                <App />
+                {/*<App />*/}
+                <TestSpinner/>
             </Provider>
         );
     }
