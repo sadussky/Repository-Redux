@@ -1,5 +1,10 @@
-/**
- * Created by mac on 2017/3/29.
+/*
+ * Copyright (c) 1992-2010 by Sadu.Stephen.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ * @date 2017/04/14
+ * @since v1.0.0,build,33889
+ * github: https://github.com/sadussky
+ * web : http:www.sadussky.com
  */
 
 
@@ -7,11 +12,12 @@ import 'babel-polyfill';
 import thunkMiddleware from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 import {createStore, applyMiddleware} from 'redux';
-import {selectSubreddit, fetchPosts, fetchPostsIfNeeded} from '../redux/actions/actions';
-import rootReducer from '../redux/reducers/reducers';
-import * as apiAddress from '../modules/address/api/apiAddress';
+import rootReducer from '../reducers/reducers';
+import {selectSubreddit, fetchPosts, fetchPostsIfNeeded} from '../actions/actions';
 const loggerMiddleware = createLogger();
-const LOG_TAG = 'TestReduxReducers';
+const LOG_TAG = 'TEST##TestReduxReducers';
+import * as apiAddress from '../../address/api/apiAddress';
+
 
 const store = createStore(
     rootReducer,
@@ -34,8 +40,6 @@ export function TestReduxReducers() {
             console.log("TEST##", store.getState());
         }
     )
-
-
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchProvince()));
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchCity('420000')));
     console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchArea('421100')));

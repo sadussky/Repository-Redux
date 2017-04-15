@@ -1,9 +1,8 @@
 /**
  * Created by Sadussky(@CopyRight 2017-2010) on 2017/3/9.
  */
-
-import  {Component} from 'react';
 import  {bindActionCreators, combineReducers} from 'redux';
+import  {Component} from 'react';
 import  {connect} from 'react-redux';
 
 

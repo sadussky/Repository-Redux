@@ -25,7 +25,7 @@ import Menu, {MenuContext, MenuOptions, MenuOption, MenuTrigger} from 'react-nat
 class TestSpinner extends Component {
 
     constructor(props) {
-
+        super();
     }
 
 

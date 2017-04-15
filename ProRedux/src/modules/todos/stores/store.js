@@ -3,10 +3,10 @@
  */
 
 import  {createStore} from 'redux';
-import  {todoApp} from './reducers';
-import  * as ACTIONS from './reducers';
+import  {todoApp} from '../reducers/reducers';
+import  * as ACTIONS from '../reducers/reducers';
 let store = createStore(todoApp);
-const CONS_LOG = 'TEST##';
+const CONS_LOG = `TEST##LogRedux`;
 
 
 export  function  LogRedux() {
@@ -21,9 +21,6 @@ export  function  LogRedux() {
     store.dispatch(ACTIONS.toggleTodo(0));
     store.dispatch(ACTIONS.toggleTodo(1));
     store.dispatch(ACTIONS.setVisibilityFilter(ACTIONS.VisibilityFilters.SHOW_COMPLETED));
-
-
-
 
 
 }

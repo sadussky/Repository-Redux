@@ -1,11 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+/*
+ * Copyright (c) 1992-2010 by Sadu.Stephen.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ * @date 2017/04/14
+ * @since v1.0.0,build,33889
+ * github: https://github.com/sadussky
+ * web : http:www.sadussky.com
  */
-
-
-
 import 'babel-polyfill';
 import {
     AppRegistry,
@@ -19,22 +19,19 @@ import {
     DeviceEventEmitter,
     ToastAndroid
 } from 'react-native';
-
 import React, {Component} from 'react';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import {todoApp} from './src/redux/reducers';
-import App from './src/components/App';
 import CodePush from "react-native-code-push";
-import  {TestReduxReducers} from './src/screens/TestReduxReducers';
-import  {TestSpinner} from './src/screens/TestSpinner';
+import {TestTodos} from './src/modules/todos/containers/TestTodos';
+import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
+import {TestSpinner} from './src/modules/address/containers/TestSpinner';
+import TestRn from './src/screens/TestRn';
 
 
 let codePushOptions = {
     checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
     installMode: CodePush.InstallMode.ON_NEXT_RESTART
 };
-let store = createStore(todoApp);
+
 
 export default class ProRedux extends Component {
 
@@ -50,23 +47,12 @@ export default class ProRedux extends Component {
 
     render() {
         return (
-            <Provider store={store}>
-                {/*<App />*/}
-                <TestSpinner/>
-            </Provider>
+            <View>
+                <TestTodos/>
+            </View>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-
-});
 
 ProRedux = CodePush(codePushOptions)(ProRedux);
 AppRegistry.registerComponent('ProRedux', () => ProRedux);
