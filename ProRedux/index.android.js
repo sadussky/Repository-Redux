@@ -24,6 +24,7 @@ import CodePush from "react-native-code-push";
 import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
 import {TestSpinner} from './src/modules/address/containers/TestSpinner';
+import {TestSpinner2} from './src/modules/address/containers/TestSpinner2';
 import TestRn from './src/screens/TestRn';
 
 
@@ -48,7 +49,7 @@ class ProRedux extends Component {
         return (
             <View style={{flex:1}}>
                 {/*<TestTodos />*/}
-                <TestSpinner/>
+                <TestSpinner2/>
             </View>
         );
     }
