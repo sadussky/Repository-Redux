@@ -10,6 +10,7 @@
 export const TYPE_ON_INIT_MIX_OBJECT = 'TYPE_ON_INIT_MIX_OBJECT';
 export const TYPE_ON_UPDATE_PROVINCE_DATA = 'TYPE_ON_UPDATE_PROVINCE_DATA';
 export const TYPE_ON_UPDATE_CITY_DATA = 'TYPE_ON_UPDATE_CITY_DATA';
+export const TYPE_ON_SELECT_PROVINCE = 'TYPE_ON_SELECT_PROVINCE';
 export const TYPE_ON_SELECT_CITY = 'TYPE_ON_SELECT_CITY';
 export const TYPE_ON_SELECT_AREA = 'TYPE_ON_SELECT_AREA';
 export const TYPE_PLACEHOLDER_STATE = 'address_modules_a_mixobj';
@@ -45,16 +46,25 @@ function onUpdateCityData(cityCode) {
 
 function onSelectProvince(provinceCode) {
     return {
-        type: TYPE_ON_SELECT_CITY,
+        type: TYPE_ON_SELECT_PROVINCE,
         provinceCode,
         stateHodler: TYPE_PLACEHOLDER_STATE
     }
 }
 
+
 function onSelectCity(cityCode) {
     return {
-        type: TYPE_ON_SELECT_AREA,
+        type: TYPE_ON_SELECT_CITY,
         cityCode,
+        stateHodler: TYPE_PLACEHOLDER_STATE
+    }
+}
+
+function onSelectArea(areaCode) {
+    return {
+        type: TYPE_ON_SELECT_AREA,
+        areaCode,
         stateHodler: TYPE_PLACEHOLDER_STATE
     }
 }
@@ -64,6 +74,6 @@ export {
     onUpdateProvinceData,
     onUpdateCityData,
     onSelectProvince,
-    onSelectCity
-
+    onSelectCity,
+    onSelectArea
 }

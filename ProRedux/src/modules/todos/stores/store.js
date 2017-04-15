@@ -6,13 +6,15 @@ import  {createStore} from 'redux';
 import  {todoApp} from '../reducers/reducers';
 import  * as ACTIONS from '../reducers/reducers';
 let store = createStore(todoApp);
-const CONS_LOG = `TEST##LogRedux`;
+const LOG_TAG = `TEST##LogRedux`;
 
 
-export  function  LogRedux() {
+export function LogRedux() {
     //Log the initial state
-    console.log(CONS_LOG, store.getState());
-    let unsubscribe = store.subscribe(()=>{ console.log(CONS_LOG, store.getState());})
+    console.log(LOG_TAG, store.getState());
+    let unsubscribe = store.subscribe(() => {
+        console.log(LOG_TAG, store.getState());
+    })
 
     //Dispatch some actions
     store.dispatch(ACTIONS.addTodo('Learn about actions'));

@@ -32,16 +32,16 @@ export function TestReduxReducers() {
 
     store.dispatch(selectSubreddit('reactjs'));
     store.dispatch(fetchPosts('reactjs')).then(() =>
-        console.log("TEST##", `Get state with \n ${JSON.stringify(store.getState())}`)
+        console.log(LOG_TAG, `Get state with \n ${JSON.stringify(store.getState())}`)
     );
 
     store.dispatch(fetchPostsIfNeeded('reactjs')).then(() => {
-            console.log("TEST##", 'fetchPostsIfNeeded(\'reactjs\') request resolved!');
-            console.log("TEST##", store.getState());
+            console.log(LOG_TAG, 'fetchPostsIfNeeded(\'reactjs\') request resolved!');
+            console.log(LOG_TAG, store.getState());
         }
     )
-    console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchProvince()));
-    console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchCity('420000')));
-    console.log(`TEST##${LOG_TAG}`, JSON.stringify(apiAddress.fetchArea('421100')));
+    console.log(LOG_TAG, JSON.stringify(apiAddress.fetchProvince()));
+    console.log(LOG_TAG, JSON.stringify(apiAddress.fetchCity('420000')));
+    console.log(LOG_TAG, JSON.stringify(apiAddress.fetchArea('421100')));
 
 }

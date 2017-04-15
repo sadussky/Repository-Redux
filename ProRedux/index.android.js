@@ -23,9 +23,26 @@ import React, {Component} from 'react';
 import CodePush from "react-native-code-push";
 import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
-import {TestSpinner} from './src/modules/address/containers/TestSpinner';
-import {TestSpinner2} from './src/modules/address/containers/TestSpinner2';
+import VisibleTestSpinner3 from './src/modules/address/containers/VisibleTestSpinner3';
 import TestRn from './src/screens/TestRn';
+
+
+//Store Container |START|---------------------------
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import {createLogger} from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
+import rootReducer from './src/modules/address/reducers/reducers';
+// let store = createStore(rootReducer);
+const loggerMiddleware = createLogger();
+const store = createStore(
+    rootReducer,
+    applyMiddleware(
+        thunkMiddleware, // lets us dispatch() functions
+        loggerMiddleware // neat middleware that logs actions
+    )
+)
+
 
 
 let codePushOptions = {
@@ -41,17 +58,25 @@ class ProRedux extends Component {
 
 
     componentWillMount() {
-        TestReduxReducers();
+        // TestReduxReducers();
     }
 
 
     render() {
         return (
-            <View style={{flex:1}}>
-                {/*<TestTodos />*/}
-                <TestSpinner2/>
-            </View>
+            <Provider store={store}>
+                <VisibleTestSpinner3 />
+            </Provider>
         );
+    }
+
+    renderContainer() {
+        {/*<View style={{flex:1}}>*/
+        }
+        {/*/!*<TestTodos />*!/*/
+        }
+        {/*</View>*/
+        }
     }
 }
 

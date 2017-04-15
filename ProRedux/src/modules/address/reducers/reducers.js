@@ -8,9 +8,10 @@
  */
 import {combineReducers} from 'redux';
 import {
-    TYPE_ON_INIT_MIX_OBJECT
+    TYPE_ON_INIT_MIX_OBJECT,
     TYPE_ON_UPDATE_PROVINCE_DATA,
     TYPE_ON_UPDATE_CITY_DATA,
+    TYPE_ON_SELECT_PROVINCE,
     TYPE_ON_SELECT_CITY,
     TYPE_ON_SELECT_AREA
 } from '../actions/actions';
@@ -48,7 +49,7 @@ function onUpdateProvinceData(obj) {
     if (obj.cityArray && obj.cityArray.length > 0) {
         obj.curCCode = obj.curCCode ? obj.curCCode : obj.cityArray[0].code;
         obj.areaArray = apiAdress.fetchArea(obj.curCCode);
-        if (obj.areaArray && obj.length > 0) {
+        if (obj.areaArray && obj.areaArray.length > 0) {
             obj.curACode = obj.curACode ? obj.curACode : obj.areaArray[0].code;
         } else {
             obj.areaArray = [];
@@ -79,7 +80,7 @@ function onUpdateProvinceData(obj) {
  */
 function onUpdateCityData(obj) {
     obj.areaArray = apiAdress.fetchArea(obj.curCCode);
-    if (obj.areaArray && obj.length > 0) {
+    if (obj.areaArray && obj.areaArray.length > 0) {
         obj.curACode = obj.areaArray[0].code;
     } else {
         obj.areaArray = [];
@@ -96,12 +97,14 @@ function onUpdateCityData(obj) {
  */
 function onSelectProvince(obj, provinceCode) {
     if (provinceCode) {
-        obj.curPCode = provinceCode;
-        obj.curCCode = '';
-        obj.curACode = '';
-        onUpdateProvinceData(obj);
+        let newObj = Object.assign({}, obj);
+        newObj.curPCode = provinceCode;
+        newObj.curCCode = '';
+        newObj.curACode = '';
+        onUpdateProvinceData(newObj);
+        return newObj;
     }
-    return obj;
+    return obj
 }
 
 
@@ -112,12 +115,29 @@ function onSelectProvince(obj, provinceCode) {
  */
 function onSelectCity(obj, cityCode) {
     if (cityCode) {
-        obj.curCCode = cityCode;
-        obj.curACode = '';
-        onUpdateCityData(obj);
+        let newObj = Object.assign({}, obj);
+        newObj.curCCode = cityCode;
+        newObj.curACode = '';
+        onUpdateCityData(newObj);
+        return newObj;
     }
     return obj;
 }
+
+/**
+ * 界面下拉选择市的时候调用此方法
+ * @param obj
+ * @param cityCode
+ */
+function onSelectArea(obj, areaCode) {
+    if (areaCode) {
+        let newObj = Object.assign({}, obj);
+        newObj.curACode = areaCode;
+        return newObj;
+    }
+    return obj;
+}
+
 
 function handleAddressUpdate(state = {}, action) {
     switch (action.type) {
@@ -125,33 +145,40 @@ function handleAddressUpdate(state = {}, action) {
             return Object.assign({}, state,
                 {[action.stateHodler]: onInitMixAddressObject(action)});
         case TYPE_ON_UPDATE_PROVINCE_DATA :
-            let srcObj = state[action.stateHodler];
-            if (srcObj) {
-                srcObj.curPCode = action.provinceCode;
+            let srcObj1 = state[action.stateHodler];
+            if (srcObj1) {
+                srcObj1.curPCode = action.provinceCode;
                 return Object.assign({}, state,
-                    {[action.stateHodler]: onUpdateProvinceData(srcObj)});
+                    {[action.stateHodler]: onUpdateProvinceData(srcObj1)});
             }
             break;
         case TYPE_ON_UPDATE_CITY_DATA :
-            let srcObj = state[action.stateHodler];
-            if (srcObj) {
-                srcObj.curCCode = action.cityCode;
+            let srcObj2 = state[action.stateHodler];
+            if (srcObj2) {
+                srcObj2.curCCode = action.cityCode;
                 return Object.assign({}, state,
-                    {[action.stateHodler]: onUpdateCityData(srcObj)});
+                    {[action.stateHodler]: onUpdateCityData(srcObj2)});
+            }
+            break;
+        case TYPE_ON_SELECT_PROVINCE :
+            let srcObj3 = state[action.stateHodler];
+            if (srcObj3) {
+                return Object.assign({}, state,
+                    {[action.stateHodler]: onSelectProvince(srcObj3, action.provinceCode)});
             }
             break;
         case TYPE_ON_SELECT_CITY :
-            let srcObj = state[action.stateHodler];
-            if (srcObj) {
+            let srcObj4 = state[action.stateHodler];
+            if (srcObj4) {
                 return Object.assign({}, state,
-                    {[action.stateHodler]: onSelectProvince(srcObj, action.provinceCode)});
+                    {[action.stateHodler]: onSelectCity(srcObj4, action.cityCode)});
             }
             break;
         case TYPE_ON_SELECT_AREA :
-            let srcObj = state[action.stateHodler];
-            if (srcObj) {
+            let srcObj5 = state[action.stateHodler];
+            if (srcObj5) {
                 return Object.assign({}, state,
-                    {[action.stateHodler]: onSelectCity(srcObj, action.cityCode)});
+                    {[action.stateHodler]: onSelectArea(srcObj5, action.areaCode)});
             }
             break;
     }
@@ -159,7 +186,7 @@ function handleAddressUpdate(state = {}, action) {
 }
 
 const rootReducer = combineReducers({
-    handleAddressUpdate,
+    handleAddressUpdate
 })
 
 export default rootReducer;

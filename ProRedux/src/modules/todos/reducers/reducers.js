@@ -73,7 +73,7 @@ export function todoApp(state = initialState, action) {
         todos: todos(state.todos, action),
     }
 
-    console.log('TEST##', 'todoApp(state = initialState, action)[:] ' + JSON.stringify(newObj));
+    // console.log('TEST##', 'todoApp(state = initialState, action)[:] ' + JSON.stringify(newObj));
     return newObj;
     //
     // return {

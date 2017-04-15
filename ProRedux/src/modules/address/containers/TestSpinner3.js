@@ -1,22 +1,33 @@
-'use strict';
-
+/*
+ * Copyright (c) 1992-2010 by Sadu.Stephen.  ALL RIGHTS RESERVED.
+ * Consult your license regarding permissions and restrictions.
+ * @date 2017/04/14
+ * @since v1.0.0,build,33889
+ * github: https://github.com/sadussky
+ * web : http:www.sadussky.com
+ */
 import React, {Component} from 'react';
-const ReactNative = require('react-native');
-const {
-    ScrollView,
+import {
+    AppRegistry,
     StyleSheet,
     Text,
-    View
-} = ReactNative;
+    View,
+    Button,
+    ScrollView,
+    Image,
+    TouchableOpacity,
+    DeviceEventEmitter,
+    ToastAndroid,
+    Dimensions
+} from 'react-native';
 
-import Menu, {
-    MenuContext,
-    MenuOptions,
-    MenuOption,
-    MenuTrigger
-} from 'react-native-menu';
 
-class TestSpinner extends Component {
+import Menu, {MenuContext, MenuOptions, MenuOption, MenuTrigger} from 'react-native-menu';
+const {height, width} = Dimensions.get('window');
+const LOG_TAG = 'TEST##TestSpinner3';
+
+
+class TestSpinner3 extends Component {
 
     constructor(props) {
         super(props);
@@ -32,7 +43,9 @@ class TestSpinner extends Component {
         //setInterval(() => {
         //  this.refs.MenuContext.toggleMenu('menu1');
         //}, 2000);
+        this.initMixAddressObject();
     }
+
 
     setMessage(value) {
         if (typeof value === 'string') {
@@ -51,9 +64,24 @@ class TestSpinner extends Component {
         return false;
     }
 
+    initMixAddressObject() {
+        const {
+            onInitMixAddressObject,
+            onUpdateProvinceData,
+            onUpdateCityData,
+            onSelectProvince,
+            onSelectCity,
+            onSelectArea
+        } = this.props;
+        onInitMixAddressObject('420000', '421100', '421125');
+        onUpdateProvinceData('420000');
+    }
+
+
     render() {
+
         return (
-            <MenuContext style={{ flex: 1 }} ref="MenuContext">
+            (<MenuContext style={{ flex: 1 }} ref="MenuContext">
                 <View style={styles.topbar}>
                     <Menu onSelect={this.setMessage}>
                         <MenuTrigger disabled={this.state.firstMenuDisabled} style={styles.menuTrigger}>
@@ -103,43 +131,99 @@ class TestSpinner extends Component {
                         { this.state.message }
                     </Text>
                 </View>
-                <View style={styles.content}>
-                    <Text style={styles.contentText}>
-                        You can also make it a dropdown
-                    </Text>
-                    <Menu style={styles.dropdown} onSelect={(value) => this.setState({ dropdownSelection: value })}>
-                        <MenuTrigger>
-                            <Text>{this.state.dropdownSelection}</Text>
-                        </MenuTrigger>
-                        <MenuOptions optionsContainerStyle={styles.dropdownOptions}
-                                     renderOptionsContainer={(options) => <ScrollView><Text>CHOOSE SOMETHING....</Text>{options}</ScrollView>}>
-                            <MenuOption value="Option One">
-                                <Text>Option One</Text>
-                            </MenuOption>
-                            <MenuOption value="Option Two">
-                                <Text>Option Two</Text>
-                            </MenuOption>
-                            <MenuOption value="Option Three">
-                                <Text>Option Three</Text>
-                            </MenuOption>
-                            <MenuOption value="Option Four">
-                                <Text>Option Four</Text>
-                            </MenuOption>
-                            <MenuOption value="Option Five">
-                                <Text>Option Five</Text>
-                            </MenuOption>
-                        </MenuOptions>
-                    </Menu>
+                <View style={styles.layout_options}>
+                    <View style={styles.content}>
+                        <Text style={styles.contentText}>
+                            Choose Province
+                        </Text>
+                        {this.renderMenuOption(0)}
+                    </View>
+                    <View style={styles.content}>
+                        <Text style={styles.contentText}>
+                            Choose City
+                        </Text>
+                        {this.renderMenuOption(1)}
+                    </View>
+                    <View style={styles.content}>
+                        <Text style={styles.contentText}>
+                            Choose Area
+                        </Text>
+                        {this.renderMenuOption(2)}
+                    </View>
                 </View>
-            </MenuContext>
+            </MenuContext>)
         );
+    }
+
+
+    renderMenuOption(index) {
+        const {
+            onInitMixAddressObject,
+            onUpdateProvinceData,
+            onUpdateCityData,
+            onSelectProvince,
+            onSelectCity,
+            onSelectArea,
+            mixAddressObject
+        } = this.props;
+        if (mixAddressObject) {
+            let array = [];
+            let selectFuc = null;
+            let curSelectCode = '';
+            switch (index) {
+                case 0:
+                    array = mixAddressObject.provinceArray;
+                    selectFuc = onSelectProvince;
+                    curSelectCode = mixAddressObject.curPCode;
+                    break;
+                case 1:
+                    array = mixAddressObject.cityArray;
+                    selectFuc = onSelectCity;
+                    curSelectCode = mixAddressObject.curCCode;
+                    break;
+                case 2:
+                    array = mixAddressObject.areaArray;
+                    selectFuc = onSelectArea;
+                    curSelectCode = mixAddressObject.curACode;
+                    break;
+            }
+            let views = [];
+            if (array instanceof Array && array && array.length > 0) {
+                views = array.map((data, index) => {
+                    return <MenuOption value={data.code}>
+                        <Text>{data.name}</Text>
+                    </MenuOption>
+                });
+            }
+            let dropDownText = '请选择';
+            array.forEach((data, index) => {
+                if (data.code == curSelectCode) {
+                    dropDownText = data.name;
+                }
+            });
+            return (
+                <Menu style={styles.dropdown}
+                      onSelect={(value) => {
+                        console.log(LOG_TAG,`onSelect=${value}`);
+                        selectFuc(value) }}>
+                    <MenuTrigger>
+                        <Text>{dropDownText}</Text>
+                    </MenuTrigger>
+                    <MenuOptions optionsContainerStyle={styles.dropdownOptions}
+                                 renderOptionsContainer={(options) => <ScrollView>{options}</ScrollView>}>
+                        {views}
+                    </MenuOptions>
+                </Menu>
+            )
+        }
     }
 }
 
 
 export {
-    TestSpinner
+    TestSpinner3
 }
+
 
 const styles = StyleSheet.create({
     topbar: {
@@ -167,19 +251,24 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderColor: '#ccc'
     },
+
+    layout_options: {
+        flexDirection: 'row'
+    },
+
     content: {
         backgroundColor: 'white',
-        paddingHorizontal: 10,
+        paddingHorizontal: 1,
         paddingTop: 20,
         paddingBottom: 30,
         borderBottomWidth: 1,
         borderColor: '#ccc'
     },
     contentText: {
-        fontSize: 18
+        fontSize: 15
     },
     dropdown: {
-        width: 300,
+        width: (width - 6) / 3,
         borderColor: '#999',
         borderWidth: 1,
         padding: 5
@@ -188,7 +277,7 @@ const styles = StyleSheet.create({
         marginTop: 30,
         borderColor: '#ccc',
         borderWidth: 2,
-        width: 300,
+        width: (width - 6) / 3,
         height: 200
     }
 });
