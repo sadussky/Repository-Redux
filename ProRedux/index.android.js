@@ -25,6 +25,7 @@ import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
 import VisibleTestSpinner3 from './src/modules/address/containers/VisibleTestSpinner3';
 import TestRn from './src/screens/TestRn';
+import TestListView from './src/screens/TestListView';
 
 
 //Store Container |START|---------------------------
@@ -42,7 +43,6 @@ const store = createStore(
         loggerMiddleware // neat middleware that logs actions
     )
 )
-
 
 
 let codePushOptions = {
@@ -63,6 +63,16 @@ class ProRedux extends Component {
 
 
     render() {
+        return this.renderTestListViwe();
+    }
+
+    renderTestListViwe() {
+        return (
+            <TestListView todos={[]} onTodoClick={()=>{}}/>
+        )
+    }
+
+    renderProviderView() {
         return (
             <Provider store={store}>
                 <VisibleTestSpinner3 />
@@ -71,13 +81,13 @@ class ProRedux extends Component {
     }
 
     renderContainer() {
-        {/*<View style={{flex:1}}>*/
-        }
-        {/*/!*<TestTodos />*!/*/
-        }
-        {/*</View>*/
-        }
+        return (
+            <View style={{flex:1}}>
+                <TestTodos />
+            </View>
+        );
     }
+
 }
 
 ProRedux = CodePush(codePushOptions)(ProRedux);
