@@ -19,7 +19,8 @@ import {
     DeviceEventEmitter,
     ToastAndroid,
     Dimensions,
-    ListView
+    ListView,
+    TouchableHighlight
 } from 'react-native';
 const {height, width} = Dimensions.get('window');
 const LOG_TAG = 'TEST##TestListView';
@@ -47,13 +48,19 @@ class TestListView extends Component {
     };
 
 
+    _pressData = ({}: {[key: number]: boolean});
+
     constructor(props) {
         super(props);
         this.initialState();
         this.initProperties();
+        this.initFunctionBindings();
     }
 
-    _pressData = ({}: {[key: number]: boolean});
+    componentWillMount() {
+        this._pressData = {};
+    }
+
 
     initialState() {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -66,28 +73,61 @@ class TestListView extends Component {
         //TODO
     }
 
-    componentWillMount() {
-        this._pressData = {};
+    initFunctionBindings() {
+    }
+
+
+    _onEndReached() {
+
     }
 
 
     render() {
         return (
             <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this._renderRow}
+                enableEmptySections={true}
+                initialListSize={10}
+                onChangeVisibleRows={(visibleRows, changedRows):void =>{}}
+                onEndReached={this._onEndReached}
+                onEndReachedThreshold={20}
+                removeClippedSubviews={true}
+                //renderFooter={this._renderFooter}
+                //renderHeader={this._renderHeader}
+                //renderScrollComponent={this._renderScrollComponent}
+                //renderSectionHeader={this._renderSectionHeader}
                 renderSeparator={this._renderSeparator}
+                renderRow={(...args)=>{return this._renderRow(...args)}}
+                dataSource={this.state.dataSource}
             />
         );
+    }
+
+
+    _renderHeader() {
+        //TODO
+    }
+
+    _renderFooter() {
+        //TODO
+    }
+
+    _renderScrollComponent(props) {
+        //TODO
+    }
+
+    _renderSectionHeader() {
+        //TODO
     }
 
     _renderRow(rowData: string, sectionID: number, rowID: number, highlightRow: (sectionID: number, rowID: number) => void) {
         var rowHash = Math.abs(hashCode(rowData));
         var imgSource = THUMB_URLS[rowHash % THUMB_URLS.length];
+        // var _this = this;
         return (
             <TouchableHighlight onPress={() => {
-        this._pressRow(rowID);
-        highlightRow(sectionID, rowID); }}>
+                this._pressRow(rowID);
+                highlightRow(sectionID, rowID);
+            }}>
                 <View>
                     <View style={styles.row}>
                         <Image style={styles.thumb} source={imgSource}/>
@@ -111,11 +151,11 @@ class TestListView extends Component {
 
     _pressRow(rowID: number) {
         this._pressData[rowID] = !this._pressData[rowID];
-        this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(
-                this._genRows(this._pressData)
-            )
-        });
+        // this.setState({
+        //     dataSource: this.state.dataSource.cloneWithRows(
+        //         this._genRows(this._pressData)
+        //     )
+        // });
     }
 
     _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlighted: bool) {
@@ -128,21 +168,46 @@ class TestListView extends Component {
             }}/>
         );
     }
+
+
+    // renderItems(items) {
+    //     if (items
+    //         && items instanceof Array
+    //         && items.length > 0) {
+    //         let itemsViews = [];
+    //         itemsViews = items.map(
+    //             (data, index) => {
+    //                 return <ApplicationItem
+    //                     title={data.name}
+    //                     sizes={data.size}
+    //                     imgSrc={data.image}
+    //                     point={}
+    //                     size={data.size}
+    //                     num={data.num}
+    //                 />
+    //             }
+    //         );
+    //         return itemsViews;
+    //     }
+    // }
+
+
 }
 
+
 var THUMB_URLS = [
-    require('./Thumbnails/like.png'),
-    require('./Thumbnails/dislike.png'),
-    require('./Thumbnails/call.png'),
-    require('./Thumbnails/fist.png'),
-    require('./Thumbnails/bandaged.png'),
-    require('./Thumbnails/flowers.png'),
-    require('./Thumbnails/heart.png'),
-    require('./Thumbnails/liking.png'),
-    require('./Thumbnails/party.png'),
-    require('./Thumbnails/poke.png'),
-    require('./Thumbnails/superlike.png'),
-    require('./Thumbnails/victory.png'),
+    require('../general/asset/Thumbnails/like.png'),
+    require('../general/asset//Thumbnails/dislike.png'),
+    require('../general/asset//Thumbnails/call.png'),
+    require('../general/asset//Thumbnails/fist.png'),
+    require('../general/asset//Thumbnails/bandaged.png'),
+    require('../general/asset//Thumbnails/flowers.png'),
+    require('../general/asset//Thumbnails/heart.png'),
+    require('../general/asset//Thumbnails/liking.png'),
+    require('../general/asset//Thumbnails/party.png'),
+    require('../general/asset//Thumbnails/poke.png'),
+    require('../general/asset//Thumbnails/superlike.png'),
+    require('../general/asset//Thumbnails/victory.png'),
 ];
 var LOREM_IPSUM = 'Lorem ipsum dolor sit amet, ' +
     'ius ad pertinax oportere accommodare, ' +
