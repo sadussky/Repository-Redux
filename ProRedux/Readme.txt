@@ -87,7 +87,7 @@ signature config :
  * Created by Sadu.Stephen on 2017/4/19.
  * @since v1.0.0,build,33889
  * github: https://github.com/sadussky
- * web : http:www.sadussky.com
+ * web : http://www.sadussky.com
  */
 
 
