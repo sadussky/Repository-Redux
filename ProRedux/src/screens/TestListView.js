@@ -20,7 +20,8 @@ import {
     ToastAndroid,
     Dimensions,
     ListView,
-    TouchableHighlight
+    TouchableHighlight,
+    RefreshControl
 } from 'react-native';
 const {height, width} = Dimensions.get('window');
 const LOG_TAG = 'TEST##TestListView';
@@ -65,6 +66,7 @@ class TestListView extends Component {
     initialState() {
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
+            refresh: false,
             dataSource: ds.cloneWithRows(this._genRows({})),
         };
     }
@@ -79,6 +81,13 @@ class TestListView extends Component {
 
     _onEndReached() {
 
+    }
+
+    _onRefreshData() {
+        if (this.state.refresh) return;
+        this.setState({refresh: true});
+        this._genRows({});
+        this.setState({refresh: false});
     }
 
 
@@ -98,6 +107,12 @@ class TestListView extends Component {
                 renderSeparator={this._renderSeparator}
                 renderRow={(...args)=>{return this._renderRow(...args)}}
                 dataSource={this.state.dataSource}
+                refreshControl={
+                              <RefreshControl
+                                  refreshing={this.state.refresh}
+                                  onRefresh={()=>this._onRefreshData()}
+                              />
+                          }
             />
         );
     }

@@ -63,7 +63,7 @@ class ProRedux extends Component {
 
 
     render() {
-        return this.renderTestListViwe();
+        return this.renderProviderView();
     }
 
     renderTestListViwe() {
