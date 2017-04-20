@@ -23,32 +23,15 @@ import React, {Component} from 'react';
 import CodePush from "react-native-code-push";
 import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
-import VisibleTestSpinner3 from './src/modules/address/containers/VisibleTestSpinner3';
-import TestRn from './src/screens/TestRn';
-import TestListView from './src/screens/TestListView';
-
-
-//Store Container |START|---------------------------
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
-import {createLogger} from 'redux-logger';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer from './src/modules/address/reducers/reducers';
-// let store = createStore(rootReducer);
-const loggerMiddleware = createLogger();
-const store = createStore(
-    rootReducer,
-    applyMiddleware(
-        thunkMiddleware, // lets us dispatch() functions
-        loggerMiddleware // neat middleware that logs actions
-    )
-)
-
-
+import TestRn from './src/pages/TestRn';
+import TestListView from './src/pages/TestListView';
+import {AddressPage} from './src/modules/address/pages/Address.page';
 let codePushOptions = {
     checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
     installMode: CodePush.InstallMode.ON_NEXT_RESTART
 };
+
+
 
 class ProRedux extends Component {
 
@@ -63,7 +46,9 @@ class ProRedux extends Component {
 
 
     render() {
-        return this.renderTestListViwe();
+        // return this.renderTestListViwe();
+        return this.renderProviderView();
+        // return this.renderContainer();
     }
 
     renderTestListViwe() {
@@ -74,9 +59,7 @@ class ProRedux extends Component {
 
     renderProviderView() {
         return (
-            <Provider store={store}>
-                <VisibleTestSpinner3 />
-            </Provider>
+            <AddressPage/>
         );
     }
 
