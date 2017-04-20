@@ -11,10 +11,10 @@
 function test() {
 
     const addresses = this.props.addresses;
-    let filterArray = [];
+    let filterId ='';
     addresses.forEach((data, index) => {
         if (data.status == 1) {
-            filterArray.push(data);
+            filterId= data.id;
         }
     });
 
