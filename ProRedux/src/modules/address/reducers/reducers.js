@@ -102,6 +102,7 @@ function onSelectProvince(obj, provinceCode) {
         newObj.curCCode = '';
         newObj.curACode = '';
         onUpdateProvinceData(newObj);
+        // throw {error:12121,msg:'sdfdsfds'};
         return newObj;
     }
     return obj

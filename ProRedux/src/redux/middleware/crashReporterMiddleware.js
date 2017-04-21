@@ -18,7 +18,7 @@ function crashReporterMiddleware(_ref) {
             try {
                 return next(action)
             } catch (err) {
-                console.error(LOG_TAG, `Caught an exception! err=${err}`);
+                console.error(LOG_TAG, `Caught an exception! err=${JSON.stringify(err)}`);
                 Raven.captureException(err, {
                     extra: {
                         action,
