@@ -26,6 +26,7 @@ import {
 const {height, width} = Dimensions.get('window');
 import VisibleTestSpinner3 from '../containers/VisibleTestSpinner3';
 import {crashReporterMiddleware} from '../../../redux/middleware/crashReporterMiddleware';
+import {ENCLoggerMiddleware} from '../../../redux/middleware/ENCLoggerMiddleware';
 //Store Container |START|---------------------------
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
@@ -38,8 +39,9 @@ const store = createStore(
     rootReducer,
     applyMiddleware(
         thunkMiddleware, // lets us dispatch() functions
-        loggerMiddleware, // neat middleware that logs actions
-        crashReporterMiddleware
+        loggerMiddleware,// neat middleware that logs actions
+        ENCLoggerMiddleware,
+        crashReporterMiddleware,
     )
 )
 
