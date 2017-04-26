@@ -211,18 +211,18 @@ class TestListView extends Component {
 
 
 var THUMB_URLS = [
-    require('../general/asset/Thumbnails/like.png'),
-    require('../general/asset//Thumbnails/dislike.png'),
-    require('../general/asset//Thumbnails/call.png'),
-    require('../general/asset//Thumbnails/fist.png'),
-    require('../general/asset//Thumbnails/bandaged.png'),
-    require('../general/asset//Thumbnails/flowers.png'),
-    require('../general/asset//Thumbnails/heart.png'),
-    require('../general/asset//Thumbnails/liking.png'),
-    require('../general/asset//Thumbnails/party.png'),
-    require('../general/asset//Thumbnails/poke.png'),
-    require('../general/asset//Thumbnails/superlike.png'),
-    require('../general/asset//Thumbnails/victory.png'),
+    require('../generally/asset/Thumbnails/like.png'),
+    require('../generally/asset/Thumbnails/dislike.png'),
+    require('../generally/asset/Thumbnails/call.png'),
+    require('../generally/asset/Thumbnails/fist.png'),
+    require('../generally/asset/Thumbnails/bandaged.png'),
+    require('../generally/asset/Thumbnails/flowers.png'),
+    require('../generally/asset/Thumbnails/heart.png'),
+    require('../generally/asset/Thumbnails/liking.png'),
+    require('../generally/asset/Thumbnails/party.png'),
+    require('../generally/asset/Thumbnails/poke.png'),
+    require('../generally/asset/Thumbnails/superlike.png'),
+    require('../generally/asset/Thumbnails/victory.png'),
 ];
 var LOREM_IPSUM = 'Lorem ipsum dolor sit amet, ' +
     'ius ad pertinax oportere accommodare, ' +
