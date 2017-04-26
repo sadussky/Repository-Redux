@@ -8,12 +8,8 @@
  */
 
 'use strict';
-/**
- * Schedules actions with { meta: { delay: N } } to be delayed by N milliseconds.
- * Makes `dispatch` return a function to cancel the timeout in this case.
- */
-
 import * as CONS from './metaTypeCons';
+import * as ENCFetch from '../../general/network/ENCFetch';
 const LOG_TAG = 'TEST##timeoutScheduler';
 
 
@@ -38,6 +34,9 @@ function metaTypeMiddleware(_ref) {
                     //         failure: ''
                     //     }
                     // }
+
+
+
                 } else if (action.metaType === CONS.META_TYPE_DELAY) {
 
                 }
