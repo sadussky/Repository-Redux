@@ -22,27 +22,41 @@ function metaTypeMiddleware(_ref) {
                 return next(action);
             } else {
                 if (action.metaType === CONS.META_TYPE_CALLAPI) {
-                    // action = {
-                    //     metaType: 'META_TYPE_CALLAPI',
-                    //     meta: {start},
-                    //     method: 'post',
-                    //     body: {},
-                    //     url: '',
-                    //     types: {
-                    //         start: '',
-                    //         success: '',
-                    //         failure: ''
-                    //     }
-                    // }
-
-
-
+                    handleWithMetaTypeCallAPI(_ref, action);
                 } else if (action.metaType === CONS.META_TYPE_DELAY) {
-
+                    handleWithMetaTypeDelay(_ref, action);
+                } else {
+                    return next(action);
                 }
             }
         };
     };
+}
+
+
+// action = {
+//     metaType: 'META_TYPE_CALLAPI',
+//     meta: {start},
+//     method: 'post',
+//     body: {},
+//     url: '',
+//     types: {
+//         start: '',
+//         success: '',
+//         failure: ''
+//     }
+// }
+
+function handleWithMetaTypeCallAPI(ref, action) {
+    var dispatch = ref.dispatch;
+    var getState = ref.getState;
+    //TODO
+}
+
+function handleWithMetaTypeDelay(ref, action) {
+    var dispatch = ref.dispatch;
+    var getState = ref.getState;
+    //TODO
 }
 
 export {
