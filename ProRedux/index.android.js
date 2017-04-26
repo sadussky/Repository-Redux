@@ -26,6 +26,8 @@ import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducer
 import TestRn from './src/pages/TestRn';
 import TestListView from './src/pages/TestListView';
 import {AddressPage} from './src/modules/address/pages/Address.page';
+import config from './src/config';
+
 let codePushOptions = {
     checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
     installMode: CodePush.InstallMode.ON_NEXT_RESTART
