@@ -23,6 +23,8 @@ import {
 } from 'react-native';
 
 import  MyToastModule from '../natives/MyToastModules';
+import  * as ENCFetch from '../generally/network/ENCFetch';
+const LOG_TAG ='TEST##TestRn';
 
 export default class TestRn extends Component {
 
@@ -61,6 +63,14 @@ export default class TestRn extends Component {
         });
     }
 
+    testNetworkRequest(){
+        ENCFetch.get('http://www.sadussky.com').then(
+            (reponse)=>{
+                console.log(LOG_TAG, `testNetworkRequest=${JSON.stringify(reponse)}`);
+            }
+        );
+    }
+
 
     render() {
         return (
@@ -83,6 +93,11 @@ export default class TestRn extends Component {
                 <TouchableOpacity
                     onPress={()=>{ this.testPromiseTime()} }>
                     <Text style={styles.instructions}>testPromiseTime</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={()=>{ this.testNetworkRequest()} }>
+                    <Text style={styles.instructions}>testNetworkRequest</Text>
                 </TouchableOpacity>
 
 

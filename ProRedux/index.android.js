@@ -32,7 +32,6 @@ let codePushOptions = {
 };
 
 
-
 class ProRedux extends Component {
 
     constructor(props) {
@@ -47,8 +46,9 @@ class ProRedux extends Component {
 
     render() {
         // return this.renderTestListViwe();
-        return this.renderProviderView();
+        // return this.renderProviderView();
         // return this.renderContainer();
+        return this.renderTestRnPages();
     }
 
     renderTestListViwe() {
@@ -68,6 +68,12 @@ class ProRedux extends Component {
             <View style={{flex:1}}>
                 <TestTodos />
             </View>
+        );
+    }
+
+    renderTestRnPages() {
+        return (
+            <TestRn/>
         );
     }
 
