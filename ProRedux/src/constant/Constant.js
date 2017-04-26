@@ -4,5 +4,3 @@
 
 
 export const LOG_TAG = 'TEST##';
-
-
