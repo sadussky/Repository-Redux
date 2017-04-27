@@ -8,6 +8,53 @@
  */
 const LOG_TAG = 'TEST##ENCFetch';
 
+const CONS_STATUS_OBJECT = {};
+CONS_STATUS_OBJECT[100] = 'Information responsesEDIT##Continue';
+CONS_STATUS_OBJECT[101] = 'Information responsesEDIT##Switching Protocol';
+CONS_STATUS_OBJECT[200] = 'Successful responses##OK';
+CONS_STATUS_OBJECT[201] = 'Successful responses##Created';
+CONS_STATUS_OBJECT[202] = 'Successful responses##Accepted';
+CONS_STATUS_OBJECT[203] = 'Successful responses##Non-Authoritative Information';
+CONS_STATUS_OBJECT[204] = 'Successful responses##No Content';
+CONS_STATUS_OBJECT[205] = 'Successful responses##Reset Content';
+CONS_STATUS_OBJECT[206] = 'Successful responses##Partial Content';
+CONS_STATUS_OBJECT[300] = 'Redirection messages##Multiple Choices';
+CONS_STATUS_OBJECT[301] = 'Redirection messages##Moved Permanently';
+CONS_STATUS_OBJECT[302] = 'Redirection messages##Found';
+CONS_STATUS_OBJECT[303] = 'Redirection messages##See Other';
+CONS_STATUS_OBJECT[304] = 'Redirection messages##Not Modified';
+CONS_STATUS_OBJECT[307] = 'Redirection messages##Temporary Redirect';
+CONS_STATUS_OBJECT[308] = 'Redirection messages##Permanent Redirect';
+CONS_STATUS_OBJECT[400] = 'Client error responses##Bad Request';
+CONS_STATUS_OBJECT[401] = 'Client error responses##Unauthorized';
+CONS_STATUS_OBJECT[403] = 'Client error responses##Forbidden';
+CONS_STATUS_OBJECT[404] = 'Client error responses##Not Found';
+CONS_STATUS_OBJECT[405] = 'Client error responses##Method Not Allowed';
+CONS_STATUS_OBJECT[406] = 'Client error responses##Not Acceptable';
+CONS_STATUS_OBJECT[407] = 'Client error responses##Proxy Authentication Required';
+CONS_STATUS_OBJECT[408] = 'Client error responses##Request Timeout';
+CONS_STATUS_OBJECT[409] = 'Client error responses##Conflict';
+CONS_STATUS_OBJECT[410] = 'Client error responses##Gone';
+CONS_STATUS_OBJECT[411] = 'Client error responses##Length Required';
+CONS_STATUS_OBJECT[412] = 'Client error responses##Precondition Failed';
+CONS_STATUS_OBJECT[413] = 'Client error responses##Payload Too Large';
+CONS_STATUS_OBJECT[414] = 'Client error responses##URI Too Long';
+CONS_STATUS_OBJECT[415] = 'Client error responses##Unsupported Media Type';
+CONS_STATUS_OBJECT[416] = 'Client error responses##Range Not Satisfiable';
+CONS_STATUS_OBJECT[417] = 'Client error responses##Expectation Failed';
+CONS_STATUS_OBJECT[426] = 'Client error responses##Upgrade Required';
+CONS_STATUS_OBJECT[428] = 'Client error responses##Precondition Required';
+CONS_STATUS_OBJECT[429] = 'Client error responses##Too Many Requests';
+CONS_STATUS_OBJECT[431] = 'Client error responses##Request Header Fields Too Large';
+CONS_STATUS_OBJECT[451] = 'Client error responses##Unavailable For Legal Reasons';
+CONS_STATUS_OBJECT[500] = 'Server error responses##Internal Server Error';
+CONS_STATUS_OBJECT[501] = 'Server error responses##Not Implemented';
+CONS_STATUS_OBJECT[502] = 'Server error responses##Bad Gateway';
+CONS_STATUS_OBJECT[503] = 'Server error responses##Service Unavailable';
+CONS_STATUS_OBJECT[504] = 'Server error responses##Gateway Timeout';
+CONS_STATUS_OBJECT[505] = 'Server error responses##HTTP Version Not Supported';
+CONS_STATUS_OBJECT[511] = 'Server error responses##Network Authentication Required';
+
 
 export function get(url, headers = {}) {
     return doRequest(url, 'GET', headers);
@@ -38,16 +85,27 @@ function doRequest(url, method, headers = {}) {
         mode: 'cors',
         cache: 'default'
     };
-    console.log(LOG_TAG, `Request init Params: ${JSON.stringify(myInit)}`);
+    console.log(LOG_TAG,
+        `fetch -START- %URL%=${url},` +
+        `%init params%=${JSON.stringify(myInit)},`+
+        `%body%=null`);
+
     return fetch(url, myInit).then(
         (response) => {
-            console.log(LOG_TAG, `[Network doRequest resolve normally]`);
+            console.log(LOG_TAG,
+                `fetch -END- %URL%=${url},` +
+                `%init params%=${JSON.stringify(myInit)},`+
+                `%body%=null,`+
+                `%response state%=${response.status},`+
+                `%statu desc%=${CONS_STATUS_OBJECT[response.status]}`);
             // console.log(LOG_TAG, `\n type=${response.type}`);
             // console.log(LOG_TAG, `\n status=${response.status}`);
             // console.log(LOG_TAG, `\n ok=${response.ok}`);
             // console.log(LOG_TAG, `\n headers=${JSON.stringify(response.headers)}`);
             // console.log(LOG_TAG, `\n url=${response.url}`);
             // console.log(LOG_TAG, `\n response=${JSON.stringify(response)}`);
+
+
             if (response.ok) {
                 var contentType = response.headers.get("content-type");
                 if (contentType && contentType.indexOf("application/json") !== -1) {
@@ -71,3 +129,5 @@ function doRequest(url, method, headers = {}) {
         throw err;
     });
 }
+
+

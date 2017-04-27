@@ -75,13 +75,6 @@ export default class TestRn extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.instructions}>
-                    To get started, edit index.android.js
-                </Text>
-                <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
-                </Text>
                 <TouchableOpacity
                     onPress={()=>{ this.testEventEmitter()} }>
                     <Text style={styles.instructions}>testEventEmitter</Text>
@@ -94,13 +87,10 @@ export default class TestRn extends Component {
                     onPress={()=>{ this.testPromiseTime()} }>
                     <Text style={styles.instructions}>testPromiseTime</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity
                     onPress={()=>{ this.testNetworkRequest()} }>
                     <Text style={styles.instructions}>testNetworkRequest</Text>
                 </TouchableOpacity>
-
-
             </View>
         );
     }
