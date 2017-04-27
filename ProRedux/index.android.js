@@ -21,12 +21,13 @@ import {
 } from 'react-native';
 import React, {Component} from 'react';
 import CodePush from "react-native-code-push";
+import config from './src/config';
 import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
 import TestRn from './src/pages/TestRn';
 import TestListView from './src/pages/TestListView';
 import {AddressPage} from './src/modules/address/pages/Address.page';
-import config from './src/config';
+
 
 let codePushOptions = {
     checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
