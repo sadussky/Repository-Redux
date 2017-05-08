@@ -6,3 +6,17 @@
  * github: https://github.com/sadussky
  * web : http:www.sadussky.com
  */
+
+const LOG_TAG = 'TEST##webpack_config.js';
+
+function webpackConfig() {
+
+
+}
+
+function initEnvironment(env) {
+    console.log(LOG_TAG, `initEnvironment -START- for %env%=${env}`);
+}
+
+webpackConfig.initEnvironment = initEnvironment;
+exports = module.exports = webpackConfig;
