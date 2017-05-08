@@ -57,7 +57,7 @@ CONS_STATUS_OBJECT[511] = 'Server error responses##Network Authentication Requir
 
 
 export function get(url, headers = {}) {
-    return doRequest(url, 'GET', headers);
+    return doRequest(url, 'fffff', headers);
 }
 
 

@@ -91,3 +91,9 @@ signature config :
  */
 
 
+
+##webpack2环境搭建步骤--------------------------
+1， npm install --save-dev webpack
+
+   npm install --save-dev webpack@v2.5.1
+2.
