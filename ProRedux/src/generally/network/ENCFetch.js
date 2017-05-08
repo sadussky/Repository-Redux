@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1992-2010 by Sadu.Stephen.  ALL RIGHTS RESERVED.
+ * Copyright (c) 1992-2010 by SaduAlbert.  ALL RIGHTS RESERVED.
  * Consult your license regarding permissions and restrictions.
  * @date 2017/04/14
  * @since v1.0.0,build,33889

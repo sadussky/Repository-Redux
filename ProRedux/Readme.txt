@@ -82,7 +82,7 @@ Usage: code-push <command>
 signature config :
 
 /*
- * Copyright (c) 1992-2010 by Sadu.Stephen.  ALL RIGHTS RESERVED.
+ * Copyright (c) 1992-2010 by SaduAlbert.  ALL RIGHTS RESERVED.
  * Consult your license regarding permissions and restrictions.
  * Created by Sadu.Stephen on 2017/4/19.
  * @since v1.0.0,build,33889
