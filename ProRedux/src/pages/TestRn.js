@@ -23,7 +23,7 @@ import {
 } from 'react-native';
 
 import  MyToastModule from '../natives/MyToastModules';
-import  * as ENCFetch from '../generally/network/ENCFetch';
+import  * as SATFetch from '../generally/network/SATFetch';
 const LOG_TAG ='TEST##TestRn';
 
 export default class TestRn extends Component {
@@ -64,7 +64,7 @@ export default class TestRn extends Component {
     }
 
     testNetworkRequest(){
-        ENCFetch.get('http://www.sadussky.com').then(
+        SATFetch.get('http://www.sadussky.com').then(
             (reponse)=>{
                 console.log(LOG_TAG, `testNetworkRequest=${JSON.stringify(reponse)}`);
             }

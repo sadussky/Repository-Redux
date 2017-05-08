@@ -9,7 +9,7 @@
 
 'use strict';
 import * as CONS from './metaTypeCons';
-import * as ENCFetch from '../../generally/network/ENCFetch';
+import * as SATFetch from '../../generally/network/SATFetch';
 const LOG_TAG = 'TEST##timeoutScheduler';
 
 
