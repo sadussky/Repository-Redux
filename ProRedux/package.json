@@ -8,7 +8,8 @@
     "test": "jest",
     "build:dev": "webpack --env=dev --progress --profile --colors",
     "build:dist": "webpack --env=prod --progress --profile --colors",
-    "start-webpack2": "webpack --config webpack.config.js"
+    "start:webpack2:dev": "webpack --env=dev  --config webpack.config.js",
+    "start:webpack2:prod": "webpack --env=prod  --config webpack.config.js"
   },
   "dependencies": {
     "@remobile/react-native-toast": "^1.0.4",

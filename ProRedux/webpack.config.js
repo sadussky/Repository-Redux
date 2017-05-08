@@ -1,6 +1,6 @@
 
 
-function buildConfig(env='dev') {
+function buildConfig(env) {
     return require('./src/config/' + 'webpack_' + env+ '.js')(env)
 }
 
