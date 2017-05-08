@@ -29,7 +29,7 @@ var path = require('path');
 module.exports = function(env) {
     return {
         entry: {
-            main: './index.js'
+            main: './index.webpack.js'
         },
         output: {
             filename: '[name].[chunkhash].js',
