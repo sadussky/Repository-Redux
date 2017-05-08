@@ -6,7 +6,7 @@
  * github: https://github.com/sadussky
  * web : http:www.sadussky.com
  */
-const LOG_TAG = 'TEST##ENCFetch';
+const LOG_TAG = 'TEST##SATFetch';
 
 const CONS_STATUS_OBJECT = {};
 CONS_STATUS_OBJECT[100] = 'Information responsesEDIT##Continue';
