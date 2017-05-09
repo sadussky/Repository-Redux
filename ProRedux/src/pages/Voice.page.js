@@ -30,7 +30,7 @@ const DocumentDirectoryPath = `${RNFS.DocumentDirectoryPath}`;
 const ExternalDirectoryPath = `${RNFS.ExternalDirectoryPath}`;
 import Record from 'react-native-record-sound';
 const {height, width} = Dimensions.get('window');
-const LOG_TAG = 'TEST##TestListView';
+const LOG_TAG = 'TEST##VoicePage';
 const DEVICES_DENSITY = PixelRatio.get();
 const MIMIN_PX = 1 / PixelRatio.get();
 
@@ -66,7 +66,6 @@ class VoicePage extends Component {
 
     startRecord() {
         console.log(LOG_TAG, `startRecord save voice to %path%=${ExternalDirectoryPath}` + 'sound.mp4');
-
         // if (!this.state.isRecording) {
         //     Record.startRecord(ExternalDirectoryPath + 'sound.mp4', (err) => {
         //         console.log(err)
@@ -75,9 +74,9 @@ class VoicePage extends Component {
         // }
     }
 
+
     stopRecord() {
         console.log(LOG_TAG, 'stopRecord');
-
         // if (this.state.isRecording) {
         //     Record.stopRecord();
         //     this.setState({isRecording: false});
@@ -102,6 +101,7 @@ class VoicePage extends Component {
 
     _onResponderReject(evt) {
         console.log(LOG_TAG, '_onResponderReject');
+        this.stopRecord();
     }
 
     _onResponderMove(evt) {
@@ -113,14 +113,17 @@ class VoicePage extends Component {
         this.stopRecord();
     }
 
+
     _onResponderTerminationRequest(evt) {
         console.log(LOG_TAG, '_onResponderTerminationRequest');
         return true;
     }
 
+
     _onResponderTerminate(evt) {
         console.log(LOG_TAG, '_onResponderTerminate');
     }
+
 
     render() {
         return (
@@ -152,6 +155,7 @@ class VoicePage extends Component {
                 </View>
             </View>
         )
+
     }
 }
 
@@ -171,6 +175,7 @@ class VoicePage extends Component {
  *
  */
 
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -187,17 +192,13 @@ const styles = StyleSheet.create({
     },
 
     record_btn: {
-        textAlign: 'center',
-        color: '#FF0000',
-        marginBottom: 5,
-        fontSize: 20,
         borderRadius: 5,
         borderColor: '#313131',
         borderWidth: MIMIN_PX,
         paddingLeft: 30,
         paddingRight: 30,
         paddingTop: 5,
-        paddingBottom:5,
+        paddingBottom: 5,
     },
 });
 

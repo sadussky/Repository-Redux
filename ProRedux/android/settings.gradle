@@ -5,7 +5,6 @@ include ':react-native-record-sound'
 include ':react-native-fs'
 
 
-
 project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
 project(':react-native-record-sound').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-record-sound/android')
 project(':react-native-fs').projectDir = new File(settingsDir, '../native_modules/react-native-fs/android')
