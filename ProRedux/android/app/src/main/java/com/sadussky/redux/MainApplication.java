@@ -8,6 +8,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.reactnativerecordsound.ReactNativeRecordSoundPackager;
 
 import java.util.Arrays;
 import java.util.List;
@@ -31,6 +32,7 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
               new MainReactPackage(),
               new MyToastPackage(),
+              new ReactNativeRecordSoundPackager(),
 //              new CodePush(
 //                      "peVEhNln02ssTKJFSjds5msYURv34ksvOXqog",
 //                      getApplicationContext(),

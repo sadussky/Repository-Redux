@@ -1,5 +1,10 @@
 rootProject.name = 'ProRedux'
-include ':react-native-code-push'
-project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
-
 include ':app'
+include ':react-native-code-push'
+include ':react-native-record-sound'
+
+
+
+
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
+project(':react-native-record-sound').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-record-sound/android')

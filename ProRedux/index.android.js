@@ -26,6 +26,7 @@ import {TestTodos} from './src/modules/todos/containers/TestTodos';
 import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
 import TestRn from './src/pages/TestRn';
 import TestListView from './src/pages/TestListView';
+import VoicePage from './src/pages/Voice.page';
 import {AddressPage} from './src/modules/address/pages/Address.page';
 
 
@@ -77,6 +78,12 @@ class ProRedux extends Component {
     renderTestRnPages() {
         return (
             <TestRn/>
+        );
+    }
+
+    renderVoicePages() {
+        return (
+            <VoicePage/>
         );
     }
 
