@@ -3,6 +3,7 @@ package com.sadussky.redux;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.futurice.rctaudiotoolkit.AudioPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -34,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
                     new MyToastPackage(),
                     new ReactNativeRecordSoundPackager(),
                     new RNFSPackage(),
+                    new AudioPackage(),
                     new CodePush(
                             "yklOWf9G5MZCnMBhmA0ZSTz3gJEBRLKS20Wxv",
                             getApplicationContext(),

@@ -51,6 +51,24 @@ class TestPage extends Component {
 
         );
     }
+
+
+    renderTest(){
+        return <div>
+
+
+            <div>类型</div>
+            <div>衣服</div>
+            <div>
+                <div>format1</div>
+                <div>format1</div>
+                <div>format1</div>
+                <div>format1</div>
+                <div>format1</div>
+            </div>
+
+        </div>
+    }
 }
 
 
