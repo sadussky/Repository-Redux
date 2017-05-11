@@ -28,6 +28,7 @@ import TestRn from './src/pages/TestRn';
 import TestListView from './src/pages/TestListView';
 import VoicePage from './src/pages/Voice.page';
 import {AddressPage} from './src/modules/address/pages/Address.page';
+import TestAudioToolkit  from './src/pages/TestAudioToolkit';
 
 
 let codePushOptions = {
@@ -53,7 +54,8 @@ class ProRedux extends Component {
         // return this.renderProviderView();
         // return this.renderContainer();
         // return this.renderTestRnPages();
-        return this.renderVoicePages();
+        // return this.renderVoicePages();
+        return this.renderVoiceToolkit();
     }
 
     renderTestListViwe() {
@@ -85,6 +87,12 @@ class ProRedux extends Component {
     renderVoicePages() {
         return (
             <VoicePage/>
+        );
+    }
+
+    renderVoiceToolkit() {
+        return (
+            <TestAudioToolkit />
         );
     }
 
