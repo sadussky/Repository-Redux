@@ -6,6 +6,9 @@
  * github: https://github.com/sadussky
  * web : http:www.sadussky.com
  */
+
+import * as StringUtils from '../utils/StringUtils';
+
 const LOG_TAG = 'TEST##SATFetch';
 
 const CONS_STATUS_OBJECT = {};
@@ -56,17 +59,57 @@ CONS_STATUS_OBJECT[505] = 'Server error responses##HTTP Version Not Supported';
 CONS_STATUS_OBJECT[511] = 'Server error responses##Network Authentication Required';
 
 
-export function get(url, headers = {}) {
-    return doRequest(url, 'fffff', headers);
+const CONS_TEST_HEADER = {
+    "token": "ST-200-KkDNgV0v6L3avA6vYtCK-api.ds.cn",
+    "sign": "",
+    "devid": "862095022419359",
+    "tsno": "12345678",
+    "channel": "android",
+    "os": "android",
+    "osVer": "9.3",
+    "brand": "iphone6",
+    "model": "MX4",
+    "ver": "1.5.1",
+    "vernm": "",
+    "width": 384,
+    "height": 640,
+    "dpi": "",
+    "iccid": "12345678",
+    "network": "wifi",
+    "longitude": 113.24916001528042,
+    "latitude": 23.10524062790545,
+    "Accept": "multipart/form-data",
+    "Content-Type": "multipart/form-data",
+    "apparray": ""
+}
+
+export function get(url, headers = null) {
+    try {
+        return doRequest(url, 'GET', headers);
+    } catch (ex) {
+        console.error(LOG_TAG, JSON.stringify(ex));
+    }
 }
 
 
-export function post(url, headers = {}) {
-    return doRequest(url, 'POST', headers);
+export function post(url, body, headers = null, isFormData) {
+    try {
+        return doRequest(url, 'POST', body, headers, isFormData);
+    } catch (ex) {
+        console.error(LOG_TAG, JSON.stringify(ex));
+    }
 }
 
 
-function doRequest(url, method, headers = {}) {
+function doRequest(url, method, body, headers = null, isFormData) {
+
+    // console.log(LOG_TAG,
+    //     `doRequest -START- %URL%=${url},` +
+    //     `%method%=${method},` +
+    //     `%body%=${JSON.stringify(body)},` +
+    //     `%headers%=${JSON.stringify(headers)},` +
+    //     `%isFormData%=${isFormData},`
+    // );
     var requestHeader = new Headers();//basic header for request!!
     try {
         if (headers) {
@@ -85,19 +128,52 @@ function doRequest(url, method, headers = {}) {
         mode: 'cors',
         cache: 'default'
     };
+
+    if (method == 'POST' || method == 'PUT') {
+        if (!isFormData) {
+            myInit.body = JSON.stringify(body);
+            myInit.headers.delete('Accept');
+            myInit.headers.delete('Content-Type');
+            myInit.headers.append('Accept', 'application/json');
+            myInit.headers.append('Content-Type', 'application/json');
+        } else {
+            if (body['_parts']) {
+                console.log(LOG_TAG, `%isFormData and _parts %=${JSON.stringify(body)}`);
+                myInit.body = body;
+                myInit.headers.delete('Accept');
+                myInit.headers.delete('Content-Type');
+                myInit.headers.append('Accept', 'multipart/form-data');
+                myInit.headers.append('Content-Type', 'multipart/form-data');
+            } else {
+                myInit.body = StringUtils.toQueryString(body);
+                // myInit.headers.delete('Accept');
+                myInit.headers.delete('Content-Type');
+                // myInit.headers.append('Accept','multipart/form-data' );
+                myInit.headers.append('Content-Type', 'application/x-www-form-urlencoded');
+            }
+        }
+    } else if (method == 'GET' && body && Object.keys(body).length !== 0) {
+        url = url + '?' + StringUtils.toQueryString(body);
+    }
+
+
     console.log(LOG_TAG,
         `fetch -START- %URL%=${url},` +
-        `%init params%=${JSON.stringify(myInit)},`+
-        `%body%=null`);
+        `%method%=${method},` +
+        `%isFormData%=${isFormData},` +
+        `%init params%=${JSON.stringify(myInit)},`);
 
     return fetch(url, myInit).then(
         (response) => {
             console.log(LOG_TAG,
                 `fetch -END- %URL%=${url},` +
-                `%init params%=${JSON.stringify(myInit)},`+
-                `%body%=null,`+
-                `%response state%=${response.status},`+
+                `%init params%=${JSON.stringify(myInit)},` +
+                `%body%=null,` +
+                `%response state%=${response.status},` +
+                `%response response%=${JSON.stringify(response)},` +
                 `%statu desc%=${CONS_STATUS_OBJECT[response.status]}`);
+
+
             // console.log(LOG_TAG, `\n type=${response.type}`);
             // console.log(LOG_TAG, `\n status=${response.status}`);
             // console.log(LOG_TAG, `\n ok=${response.ok}`);

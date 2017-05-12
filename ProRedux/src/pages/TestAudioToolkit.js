@@ -25,6 +25,9 @@ import {
     MediaStates
 } from 'react-native-audio-toolkit';
 
+
+import * as StringUtils  from  '../generally/utils/StringUtils';
+import * as SATFetch from  '../generally/network/SATFetch';
 let filename = 'test.mp4';
 
 class AppContainer extends React.Component {
@@ -189,6 +192,49 @@ class AppContainer extends React.Component {
     }
 
 
+    _uploadVoiceFile(filePath) {
+        let body = new FormData();
+        let imageURI = 'file:///storage/emulated/0/Android/data/com.sadussky.redux/files/image-fad3e669-7113-49e1-ac39-d2346b2b678c.jpg';
+        // let url = 'http://www.sadussky.com/examples/apk/' + StringUtils.uuid()+'.jpg';
+        // let url = 'http://www.sadussky.com/examples/apk/'
+        // let url = 'http://210.21.62.118:8082/customer-main-mapp/custinfo-mapi/' + StringUtils.uuid() + '.jpg';
+        let url = 'http://210.21.62.118:8082/customer-main-mapp/custinfo-mapi/uploadAndUpdateImageUrl';
+
+        body.append('photoImg', {
+            uri: imageURI,
+            type: 'image/jpg',
+            name: 'headImage.jpg',
+        });
+        const CONS_TEST_HEADER = {
+            "token": "ST-200-KkDNgV0v6L3avA6vYtCK-api.ds.cn",
+            "sign": "",
+            "devid": "862095022419359",
+            "tsno": "12345678",
+            "channel": "android",
+            "os": "android",
+            "osVer": "9.3",
+            "brand": "iphone6",
+            "model": "MX4",
+            "ver": "1.5.1",
+            "vernm": "",
+            "width": 384,
+            "height": 640,
+            "dpi": "",
+            "iccid": "12345678",
+            "network": "wifi",
+            "longitude": 113.24916001528042,
+            "latitude": 23.10524062790545,
+            "Accept": "multipart/form-data",
+            "Content-Type": "multipart/form-data",
+            "apparray": ""
+        }
+
+        SATFetch.post(url, body, CONS_TEST_HEADER, true)
+            .then((response) => {
+            }).catch((err) => {
+        });
+    }
+
     render() {
         return (
             <View>
@@ -242,6 +288,14 @@ class AppContainer extends React.Component {
                         disabled={this.state.recordButtonDisabled}
                         onPress={() => this._toggleRecord()}>
                         <Text style={styles.text_btn}>{this.state.recordButton}</Text>
+                    </TouchableOpacity>
+
+                </View>
+                <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                        style={[styles.button,{marginTop:20}]}
+                        onPress={() => this._uploadVoiceFile('')}>
+                        <Text style={styles.text_btn}>UploadFile</Text>
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.errorMessage}>{this.state.error}</Text>
