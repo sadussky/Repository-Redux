@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-native-audio-toolkit",
+        "scope": null,
+        "escapedName": "react-native-audio-toolkit",
+        "name": "react-native-audio-toolkit",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\repository\\Repository-Redux\\ProRedux"
+    ]
+  ],
+  "_cnpm_publish_time": 1474540343561,
+  "_from": "react-native-audio-toolkit@latest",
+  "_hasShrinkwrap": false,
+  "_id": "react-native-audio-toolkit@1.0.5",
+  "_inCache": true,
+  "_location": "/react-native-audio-toolkit",
+  "_nodeVersion": "6.6.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/react-native-audio-toolkit-1.0.5.tgz_1474540342619_0.47767650871537626"
+  },
+  "_npmUser": {
+    "name": "futurice",
+    "email": "metalsmith-prismic@futurice.com"
+  },
+  "_npmVersion": "3.10.7",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-audio-toolkit",
+    "scope": null,
+    "escapedName": "react-native-audio-toolkit",
+    "name": "react-native-audio-toolkit",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/react-native-audio-toolkit/download/react-native-audio-toolkit-1.0.5.tgz",
+  "_shasum": "16177a5cc6508e0d8226fd0174c9b3d2f0b1807e",
+  "_shrinkwrap": null,
+  "_spec": "react-native-audio-toolkit",
+  "_where": "D:\\repository\\Repository-Redux\\ProRedux",
+  "bugs": {
+    "url": "https://github.com/futurice/react-native-audio-toolkit/issues"
+  },
+  "dependencies": {
+    "async": "^2.0.0",
+    "eventemitter3": "^1.2.0",
+    "lodash": "^4.13.1"
+  },
+  "description": "Cross-platform audio library for React Native",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "16177a5cc6508e0d8226fd0174c9b3d2f0b1807e",
+    "size": 28664333,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/react-native-audio-toolkit/download/react-native-audio-toolkit-1.0.5.tgz"
+  },
+  "gitHead": "4746870166fe4beb9fbf075d45fab952de4558d6",
+  "homepage": "https://github.com/futurice/react-native-audio-toolkit#readme",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "futurice",
+      "email": "metalsmith-prismic@futurice.com"
+    }
+  ],
+  "name": "react-native-audio-toolkit",
+  "optionalDependencies": {},
+  "publish_time": 1474540343561,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futurice/react-native-audio-toolkit.git"
+  },
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "version": "1.0.5"
+}
