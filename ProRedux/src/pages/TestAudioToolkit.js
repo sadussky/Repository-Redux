@@ -15,8 +15,13 @@ import {
     StyleSheet,
     Switch,
     Slider,
-    TouchableOpacity
+    TouchableOpacity,
+    NativeModules,
+    DeviceEventEmitter,
+    NativeAppEventEmitter,
+    Platform
 } from 'react-native';
+var RCTAudioRecorder = NativeModules.AudioRecorder;
 import Button from 'react-native-button';
 
 import {
@@ -28,9 +33,11 @@ import {
 
 import * as StringUtils  from  '../generally/utils/StringUtils';
 import * as SATFetch from  '../generally/network/SATFetch';
+const LOG_TAG = 'TEST##TestAudioToolkit';
 let filename = 'test.mp4';
 
-class AppContainer extends React.Component {
+
+class TestAudioToolkit extends React.Component {
     constructor() {
         super();
 
@@ -47,16 +54,16 @@ class AppContainer extends React.Component {
 
             error: null
         };
+
     }
 
     componentWillMount() {
         this.player = null;
         this.recorder = null;
         this.lastSeek = 0;
-
+        this.latelyLocalFileName = this._generateFileName();
         this._reloadPlayer();
         this._reloadRecorder();
-
         this._progressInterval = setInterval(() => {
             if (this.player && this._shouldUpdateProgressBar()) {// && !this._dragging) {
                 this.setState({progress: Math.max(0, this.player.currentTime) / this.player.duration});
@@ -122,7 +129,7 @@ class AppContainer extends React.Component {
             this.player.destroy();
         }
 
-        this.player = new Player(filename, {
+        this.player = new Player(this.latelyLocalFileName, {
             autoDestroy: false
         }).prepare((err) => {
             if (err) {
@@ -149,8 +156,7 @@ class AppContainer extends React.Component {
         if (this.recorder) {
             this.recorder.destroy();
         }
-
-        this.recorder = new Recorder(filename, {
+        this.recorder = new Recorder(this.latelyLocalFileName, {
             bitrate: 256000,
             channels: 2,
             sampleRate: 44100,
@@ -158,7 +164,6 @@ class AppContainer extends React.Component {
             //format: 'ac3', // autodetected
             //encoder: 'aac', // autodetected
         });
-
         this._updateState();
     }
 
@@ -174,10 +179,15 @@ class AppContainer extends React.Component {
                 });
             }
             if (stopped) {
-                this._reloadPlayer();
-                this._reloadRecorder();
+                if (err) {
+                    this.latelyStoreFileURIString = '';
+                    this.latelyLocalFileName = this._generateFileName();
+                    this._reloadPlayer();
+                    this._reloadRecorder();
+                } else {
+                    this._getFilePathAndUploadFileToServer();
+                }
             }
-
             this._updateState();
         });
     }
@@ -192,19 +202,41 @@ class AppContainer extends React.Component {
     }
 
 
-    _uploadVoiceFile(filePath) {
+    _generateFileName() {
+        return StringUtils.uuid() + '.mp4';
+    }
+
+    _getFilePathAndUploadFileToServer() {
+        RCTAudioRecorder.getRecordFile(
+            this.latelyLocalFileName,
+            {},
+            (uriString) => {
+                console.log(LOG_TAG, `_getFilePathAndUploadFileToServer %filePath%=${uriString}`);
+                this.latelyStoreFileURIString = uriString;
+                this._uploadVoiceFile(this.latelyLocalFileName, this.latelyStoreFileURIString);
+            }
+        );
+    }
+
+    _uploadVoiceFile(name, fileURIString) {
         let body = new FormData();
-        let imageURI = 'file:///storage/emulated/0/Android/data/com.sadussky.redux/files/image-fad3e669-7113-49e1-ac39-d2346b2b678c.jpg';
+        // let fileURIString = 'file:///storage/emulated/0/Android/data/com.sadussky.redux/files/image-fad3e669-7113-49e1-ac39-d2346b2b678c.jpg';
         // let url = 'http://www.sadussky.com/examples/apk/' + StringUtils.uuid()+'.jpg';
         // let url = 'http://www.sadussky.com/examples/apk/'
         // let url = 'http://210.21.62.118:8082/customer-main-mapp/custinfo-mapi/' + StringUtils.uuid() + '.jpg';
         let url = 'http://210.21.62.118:8082/customer-main-mapp/custinfo-mapi/uploadAndUpdateImageUrl';
+        // body.append('photoImg', {
+        //     uri: fileURIString,
+        //     type: 'image/jpg',
+        //     name: 'headImage.jpg',
+        // });
 
         body.append('photoImg', {
-            uri: imageURI,
-            type: 'image/jpg',
-            name: 'headImage.jpg',
+            uri: fileURIString,
+            type: 'video/mpeg4',
+            name: name,
         });
+
         const CONS_TEST_HEADER = {
             "token": "ST-200-KkDNgV0v6L3avA6vYtCK-api.ds.cn",
             "sign": "",
@@ -231,6 +263,9 @@ class AppContainer extends React.Component {
 
         SATFetch.post(url, body, CONS_TEST_HEADER, true)
             .then((response) => {
+                this.latelyLocalFileName = this._generateFileName();
+                this._reloadPlayer();
+                this._reloadRecorder();
             }).catch((err) => {
         });
     }
@@ -293,8 +328,8 @@ class AppContainer extends React.Component {
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity
-                        style={[styles.button,{marginTop:20}]}
-                        onPress={() => this._uploadVoiceFile('')}>
+                        style={[styles.button, {marginTop: 20}]}
+                        onPress={() => this._getFilePathAndUploadFileToServer()}>
                         <Text style={styles.text_btn}>UploadFile</Text>
                     </TouchableOpacity>
                 </View>
@@ -357,4 +392,4 @@ var styles = StyleSheet.create({
 
 });
 
-export default AppContainer;
+export default TestAudioToolkit;

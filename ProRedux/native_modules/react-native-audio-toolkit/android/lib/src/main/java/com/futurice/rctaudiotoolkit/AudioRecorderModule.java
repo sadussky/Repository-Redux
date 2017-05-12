@@ -93,6 +93,7 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
                 return MediaRecorder.OutputFormat.DEFAULT;
         }
     }
+
     private int formatFromPath(String path) {
         String ext = path.substring(path.lastIndexOf('.') + 1);
 
@@ -114,6 +115,7 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
                 return MediaRecorder.AudioEncoder.DEFAULT;
         }
     }
+
     private int encoderFromPath(String path) {
         String ext = path.substring(path.lastIndexOf('.') + 1);
 
@@ -126,13 +128,12 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
         if (URLUtil.isValidUrl(path)) {
             uri = Uri.parse(path);
         } else {
-            String extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
+//            String extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
             //String extPath = Environment.getExternalStorageDirectory() + "/" + path;
-
+            String extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
             File file = new File(extPath);
             uri = Uri.fromFile(file);
         }
-
         return uri;
     }
 
@@ -210,7 +211,7 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
         recorder.setAudioSamplingRate(sampleRate);
 
         Log.d(LOG_TAG, "Recorder using options: (format: " + format + ") (encoder: " + encoder + ") "
-                    + "(bitrate: " + bitrate + ") (channels: " + channels + ") (sampleRate: " + sampleRate + ")");
+                + "(bitrate: " + bitrate + ") (channels: " + channels + ") (sampleRate: " + sampleRate + ")");
 
         recorder.setOutputFile(uri.getPath());
 
@@ -318,5 +319,17 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
 
         emitEvent(recorderId, "info", data);
 
+    }
+
+
+    //add by SaduAlbert
+
+    @ReactMethod
+    public void getRecordFile(String path, ReadableMap options, Callback callback) {
+        Uri uri = uriFromPath(path);
+        Log.d(LOG_TAG, uri.getPath());
+        if (callback != null) {
+            callback.invoke(uri == null ? "" : uri.toString());
+        }
     }
 }

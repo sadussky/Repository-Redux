@@ -49,7 +49,7 @@ class TestListView extends Component {
     };
 
 
-    _pressData = ({}: {[key: number]: boolean});
+    // _pressData = ({}: {[key: number]: boolean});
 
     constructor(props) {
         super(props);

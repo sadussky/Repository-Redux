@@ -134,20 +134,21 @@ public class AudioPlayerModule extends ReactContextBaseJavaModule implements Med
         }
 
         int resId = this.context.getResources().getIdentifier(fileNameWithoutExt,
-            "raw", this.context.getPackageName());
+                "raw", this.context.getPackageName());
         if (resId != 0) {
             return Uri.parse("android.resource://" + this.context.getPackageName() + "/" + resId);
         }
 
         // Try finding file in app data directory
-        extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
-        file = new File(extPath);
-        if (file.exists()) {
-            return Uri.fromFile(file);
-        }
+//        extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
+//        file = new File(extPath);
+//        if (file.exists()) {
+//            return Uri.fromFile(file);
+//        }
 
         // Try finding file on sdcard
-        extPath = Environment.getExternalStorageDirectory() + "/" + path;
+//        extPath = Environment.getExternalStorageDirectory() + "/" + path;
+          extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
         file = new File(extPath);
         if (file.exists()) {
             return Uri.fromFile(file);
