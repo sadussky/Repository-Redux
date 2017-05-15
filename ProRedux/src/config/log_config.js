@@ -44,7 +44,7 @@ if (env.showLog) {
             logStr += "\n";
             FileUtils.appendFile(FileUtils.LOCAL_LOG_PATH, logStr).then(
                 (resolveRes) => {
-                    orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
+                    // orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
                 }
             );
             if (args && args.length > 1) {
@@ -70,7 +70,7 @@ if (env.showLog) {
             logStr += "\n";
             FileUtils.appendFile(FileUtils.LOCAL_LOG_PATH, logStr).then(
                 (resolveRes) => {
-                    orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
+                    // orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
                 }
             );
             if (args && args.length > 1) {
@@ -96,7 +96,7 @@ if (env.showLog) {
             logStr += "\n";
             FileUtils.appendFile(FileUtils.LOCAL_LOG_PATH, logStr).then(
                 (resolveRes) => {
-                    orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
+                    // orgin_log(LOG_TAG, 'save log to %File%=' + FileUtils.LOCAL_LOG_PATH);
                 }
             );
             if (args && args.length > 1) {

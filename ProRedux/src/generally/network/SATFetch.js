@@ -87,7 +87,7 @@ export function get(url, headers = null) {
     try {
         return doRequest(url, 'GET', headers);
     } catch (ex) {
-        console.error(LOG_TAG, JSON.stringify(ex));
+        console.warn(LOG_TAG, JSON.stringify(ex));
     }
 }
 
@@ -96,7 +96,7 @@ export function post(url, body, headers = null, isFormData) {
     try {
         return doRequest(url, 'POST', body, headers, isFormData);
     } catch (ex) {
-        console.error(LOG_TAG, JSON.stringify(ex));
+        console.log(LOG_TAG, JSON.stringify(ex));
     }
 }
 
@@ -112,7 +112,7 @@ function appendHeader(requestHeader, appendHeaders) {
                 }
             }
         } catch (e) {
-            console.error(LOG_TAG, "Cannot pretend to be a bank with Header!");
+            console.log(LOG_TAG, "Cannot pretend to be a bank with Header!");
         }
     }
 }
@@ -202,11 +202,11 @@ function doRequest(url, method, body, headers = null, isFormData) {
             throw new Error('Network response was not ok.');
         },
         (reject) => {
-            console.error(LOG_TAG, `doRequest reject with some problem, reject=${JSON.stringify(reject)}`);
+            console.log(LOG_TAG, `fetch -reject-, reject=${JSON.stringify(reject)}`);
             return reject;
         }
     ).catch((err) => {
-        console.error(LOG_TAG, `There has been a problem with your fetch operation: ${JSON.stringify(err)}`);
+        console.log(LOG_TAG, `fetch -err- err=${JSON.stringify(err)}`);
         throw err;
     });
 }
