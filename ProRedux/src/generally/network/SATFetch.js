@@ -165,8 +165,10 @@ function doRequest(url, method, body, headers = null, isFormData) {
     }
 
 
+    let fetchUUID = StringUtils.uuid();
     console.log(LOG_TAG,
         `fetch -START- %URL%=${url},` +
+        `%uuid%=${fetchUUID},` +
         `%method%=${method},` +
         `%isFormData%=${isFormData},` +
         `%init params%=${JSON.stringify(myInit)},`);
@@ -175,6 +177,7 @@ function doRequest(url, method, body, headers = null, isFormData) {
         (response) => {
             console.log(LOG_TAG,
                 `fetch -END- %URL%=${url},` +
+                `%uuid%=${fetchUUID},` +
                 `%init params%=${JSON.stringify(myInit)},` +
                 `%response status%=${response.status},` +
                 `%response status desc%=${CONS_STATUS_OBJECT[response.status]},` +
@@ -202,11 +205,11 @@ function doRequest(url, method, body, headers = null, isFormData) {
             throw new Error('Network response was not ok.');
         },
         (reject) => {
-            console.log(LOG_TAG, `fetch -reject-, reject=${JSON.stringify(reject)}`);
+            console.log(LOG_TAG, `fetch -reject- %uuid%=${fetchUUID},reject=${JSON.stringify(reject)}`);
             return reject;
         }
     ).catch((err) => {
-        console.log(LOG_TAG, `fetch -err- err=${JSON.stringify(err)}`);
+        console.log(LOG_TAG, `fetch -err- %uuid%=${fetchUUID}, err=${JSON.stringify(err)}`);
         throw err;
     });
 }
