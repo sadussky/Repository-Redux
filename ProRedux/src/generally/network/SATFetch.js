@@ -101,6 +101,23 @@ export function post(url, body, headers = null, isFormData) {
 }
 
 
+function appendHeader(requestHeader, appendHeaders) {
+    if (requestHeader && appendHeaders) {
+        try {
+            if (appendHeaders) {
+                for (let key of Object.keys(appendHeaders)) {
+                    if (appendHeaders[key]) {
+                        requestHeader.append(key, appendHeaders[key]);
+                    }
+                }
+            }
+        } catch (e) {
+            console.error(LOG_TAG, "Cannot pretend to be a bank with Header!");
+        }
+    }
+}
+
+
 function doRequest(url, method, body, headers = null, isFormData) {
 
     // console.log(LOG_TAG,
@@ -111,17 +128,8 @@ function doRequest(url, method, body, headers = null, isFormData) {
     //     `%isFormData%=${isFormData},`
     // );
     var requestHeader = new Headers();//basic header for request!!
-    try {
-        if (headers) {
-            for (let key of Object.keys(headers)) {
-                if (headers[key]) {
-                    requestHeader.append(key, headers[key]);
-                }
-            }
-        }
-    } catch (e) {
-        console.error(LOG_TAG, "Cannot pretend to be a bank with Header!");
-    }
+    appendHeader(requestHeader, CONS_TEST_HEADER);
+    appendHeader(requestHeader, headers);
     var myInit = {
         method: method,
         headers: requestHeader,
@@ -168,12 +176,9 @@ function doRequest(url, method, body, headers = null, isFormData) {
             console.log(LOG_TAG,
                 `fetch -END- %URL%=${url},` +
                 `%init params%=${JSON.stringify(myInit)},` +
-                `%body%=null,` +
-                `%response state%=${response.status},` +
-                `%response response%=${JSON.stringify(response)},` +
-                `%statu desc%=${CONS_STATUS_OBJECT[response.status]}`);
-
-
+                `%response status%=${response.status},` +
+                `%response status desc%=${CONS_STATUS_OBJECT[response.status]},` +
+                `%response response%=${JSON.stringify(response)}`);
             // console.log(LOG_TAG, `\n type=${response.type}`);
             // console.log(LOG_TAG, `\n status=${response.status}`);
             // console.log(LOG_TAG, `\n ok=${response.ok}`);

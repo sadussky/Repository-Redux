@@ -236,32 +236,13 @@ class TestAudioToolkit extends React.Component {
             type: 'video/mpeg4',
             name: name,
         });
-
-        const CONS_TEST_HEADER = {
+        const header = {
             "token": "ST-200-KkDNgV0v6L3avA6vYtCK-api.ds.cn",
-            "sign": "",
-            "devid": "862095022419359",
-            "tsno": "12345678",
-            "channel": "android",
-            "os": "android",
-            "osVer": "9.3",
-            "brand": "iphone6",
-            "model": "MX4",
-            "ver": "1.5.1",
-            "vernm": "",
-            "width": 384,
-            "height": 640,
-            "dpi": "",
-            "iccid": "12345678",
-            "network": "wifi",
-            "longitude": 113.24916001528042,
-            "latitude": 23.10524062790545,
             "Accept": "multipart/form-data",
             "Content-Type": "multipart/form-data",
-            "apparray": ""
         }
 
-        SATFetch.post(url, body, CONS_TEST_HEADER, true)
+        SATFetch.post(url, body, header, true)
             .then((response) => {
                 this.latelyLocalFileName = this._generateFileName();
                 this._reloadPlayer();

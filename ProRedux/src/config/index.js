@@ -7,4 +7,4 @@
  * web : http:www.sadussky.com
  */
 
-import logConfig  from './logConfig';
+import log_config  from './log_config';
