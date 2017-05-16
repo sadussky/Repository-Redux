@@ -96,8 +96,9 @@ class TestListView extends Component {
             <ListView
                 enableEmptySections={true}
                 initialListSize={10}
-                onChangeVisibleRows={(visibleRows, changedRows):void =>{}}
-                onEndReached={this._onEndReached}
+                onChangeVisibleRows={(visibleRows, changedRows) => {
+                }}
+                onEndReached={() => this._onEndReached()}
                 onEndReachedThreshold={20}
                 removeClippedSubviews={true}
                 //renderFooter={this._renderFooter}
@@ -105,14 +106,16 @@ class TestListView extends Component {
                 //renderScrollComponent={this._renderScrollComponent}
                 //renderSectionHeader={this._renderSectionHeader}
                 renderSeparator={this._renderSeparator}
-                renderRow={(...args)=>{return this._renderRow(...args)}}
+                renderRow={(...args) => {
+                    return this._renderRow(...args)
+                }}
                 dataSource={this.state.dataSource}
                 refreshControl={
-                              <RefreshControl
-                                  refreshing={this.state.refresh}
-                                  onRefresh={()=>this._onRefreshData()}
-                              />
-                          }
+                    <RefreshControl
+                        refreshing={this.state.refresh}
+                        onRefresh={() => this._onRefreshData()}
+                    />
+                }
             />
         );
     }
@@ -134,7 +137,7 @@ class TestListView extends Component {
         //TODO
     }
 
-    _renderRow(rowData: string, sectionID: number, rowID: number, highlightRow: (sectionID: number, rowID: number) => void) {
+    _renderRow(rowData, sectionID, rowID, highlightRow) {
         var rowHash = Math.abs(hashCode(rowData));
         var imgSource = THUMB_URLS[rowHash % THUMB_URLS.length];
         // var _this = this;
@@ -155,7 +158,7 @@ class TestListView extends Component {
         );
     }
 
-    _genRows(pressData: {[key: number]: boolean}): Array<string> {
+    _genRows(pressData) {
         var dataBlob = [];
         for (var ii = 0; ii < 100; ii++) {
             var pressedText = pressData[ii] ? ' (pressed)' : '';
@@ -164,7 +167,7 @@ class TestListView extends Component {
         return dataBlob;
     }
 
-    _pressRow(rowID: number) {
+    _pressRow(rowID) {
         this._pressData[rowID] = !this._pressData[rowID];
         // this.setState({
         //     dataSource: this.state.dataSource.cloneWithRows(
@@ -173,14 +176,14 @@ class TestListView extends Component {
         // });
     }
 
-    _renderSeparator(sectionID: number, rowID: number, adjacentRowHighlighted: bool) {
+    _renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
         return (
             <View
                 key={`${sectionID}-${rowID}`}
                 style={{
-              height: adjacentRowHighlighted ? 4 : 1,
-              backgroundColor: adjacentRowHighlighted ? '#3B5998' : '#CCCCCC',
-            }}/>
+                    height: adjacentRowHighlighted ? 4 : 1,
+                    backgroundColor: adjacentRowHighlighted ? '#3B5998' : '#CCCCCC',
+                }}/>
         );
     }
 
