@@ -22,10 +22,11 @@ import {
     Platform,
     ListView,
     TouchableHighlight,
-    RefreshControl
+    RefreshControl,
+    Dimensions,
+    PixelRatio,
+    Image
 } from 'react-native';
-var RCTAudioRecorder = NativeModules.AudioRecorder;
-import Button from 'react-native-button';
 
 import {
     Player,
@@ -33,12 +34,18 @@ import {
     MediaStates
 } from 'react-native-audio-toolkit';
 
-
+var RCTAudioRecorder = NativeModules.AudioRecorder;
 import * as StringUtils  from  '../generally/utils/StringUtils';
 import * as SATFetch from  '../generally/network/SATFetch';
 const LOG_TAG = 'TEST##TestAudioToolkit';
+const {height, width} = Dimensions.get('window');
+const DEVICES_DENSITY = PixelRatio.get();
+const MIMIN_PX = 1 / PixelRatio.get();
 let filename = 'test.mp4';
-
+const image_state_conn = require('../generally/asset/Thumbnails/state_conn.jpg');
+const image_state_disconn = require('../generally/asset/Thumbnails/state_disconn.jpg');
+const image_select = require('../generally/asset/Thumbnails/icon_select.png');
+const image_unselect = require('../generally/asset/Thumbnails/icon_unselect.png');
 
 class TestAudioToolkit extends React.Component {
     constructor() {
@@ -56,7 +63,7 @@ class TestAudioToolkit extends React.Component {
             progress: 0,
             error: null,
             dataSource: this.ds.cloneWithRows(this.voiceRecords),
-            refresh:false
+            refresh: false
         };
     }
 
@@ -64,7 +71,7 @@ class TestAudioToolkit extends React.Component {
         this.player = null;
         this.recorder = null;
         this.lastSeek = 0;
-        this._prepareRecorder();
+        this._reloadRecorder();
         this._progressInterval = setInterval(() => {
             if (this.player && this._shouldUpdateProgressBar()) {// && !this._dragging) {
                 this.setState({progress: Math.max(0, this.player.currentTime) / this.player.duration});
@@ -76,14 +83,6 @@ class TestAudioToolkit extends React.Component {
         clearInterval(this._progressInterval);
     }
 
-
-    _prepareRecorder() {
-        if (this.recordFileName)
-            this.playerFileName = this.recordFileName;
-        this.recordFileName = StringUtils.uuid() + '.mp4';
-        // this._reloadPlayer(this.playerFileName);
-        this._reloadRecorder(this.recordFileName);
-    }
 
     _shouldUpdateProgressBar() {
         // Debounce progress bar update by 200 ms
@@ -152,11 +151,12 @@ class TestAudioToolkit extends React.Component {
         });
     }
 
-    _reloadRecorder(fileName) {
+    _reloadRecorder() {
         if (this.recorder) {
             this.recorder.destroy();
         }
-        this.recorder = new Recorder(fileName, {
+        this.fsVoiceName = StringUtils.uuid() + '.mp4';
+        this.recorder = new Recorder(this.fsVoiceName, {
             bitrate: 256000,
             channels: 2,
             sampleRate: 44100,
@@ -171,7 +171,6 @@ class TestAudioToolkit extends React.Component {
         if (this.player) {
             this.player.destroy();
         }
-
         this.recorder.toggleRecord((err, stopped) => {
             if (err) {
                 this.setState({
@@ -180,11 +179,11 @@ class TestAudioToolkit extends React.Component {
             }
             if (stopped) {
                 if (err) {
-                    this.recordFileStoreURI = '';
-                    this._prepareRecorder();
+                    //TODO
                 } else {
-                    this._getFilePathAndUploadFileToServer();
+                    this.onRecordSuccess();
                 }
+                this._reloadRecorder();
             }
             this._updateState();
         });
@@ -200,23 +199,103 @@ class TestAudioToolkit extends React.Component {
     }
 
 
-    _generateFileName() {
-        return StringUtils.uuid() + '.mp4';
+    _onEndReached() {
+
     }
 
-    _getFilePathAndUploadFileToServer() {
-        RCTAudioRecorder.getRecordFile(
-            this.recordFileName,
-            {},
-            (uriString) => {
-                console.log(LOG_TAG, `_getFilePathAndUploadFileToServer %filePath%=${uriString}`);
-                this.recordFileStoreURI = uriString;
-                this._uploadVoiceFile(this.recordFileName, this.recordFileStoreURI);
+    _onRefreshData() {
+
+    }
+
+
+    startRecord() {
+        if (this.recorder.state === MediaStates.RECORDING) {
+            this.recorder.stop((err) => {
+                this._reloadRecorder();
+                this.recorder.record((err) => {
+                    if (err) {
+                        this._reloadRecorder();
+                    }
+                    this._updateState();
+                });
+            });
+        } else {
+            this.recorder.record((err) => {
+                if (err) {
+                    this._reloadRecorder();
+                }
+                this._updateState();
+            });
+        }
+    }
+
+    stopRecord() {
+        if (this.recorder.state === MediaStates.RECORDING) {
+            this.recorder.stop((err) => {
+                if (err) {
+                    console.log(LOG_TAG, `stopRecord occur error %error%=${JSON.stringify(err)}`);
+                    this._reloadRecorder();
+                } else {
+                    this.onRecordSuccess();
+                }
+                this._reloadRecorder();
+            });
+        }
+    }
+
+    onRecordSuccess() {
+        let fsPath = this.recorder.fsPath;
+        let uriString = 'file://' + fsPath;
+        this.uploadVoiceFile(fsPath, uriString).then(
+            (resolveRes) => {
+                console.log(LOG_TAG, 'uploadVoiceFile resolve');
+                this.pushToVoicesArray(fsPath, uriString, true);
+            },
+            (rejectRes) => {
+                console.log(LOG_TAG, `uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
+                this.pushToVoicesArray(fsPath, uriString, false);
             }
-        );
+        ).catch((ex) => {
+            console.log(LOG_TAG, `uploadVoiceFile exception =${JSON.stringify(ex)}`);
+            this.pushToVoicesArray(fsPath, uriString, false);
+        });
+
+
+        // RCTAudioRecorder.getRecordFile(
+        //     this.fsVoiceName,
+        //     {},
+        //     (uriString) => {
+        //         console.log(LOG_TAG, `stopRecord success %uriString%=${uriString}`);
+        //         this.uploadVoiceFile(fsPath, uriString).then(
+        //             (resolveRes) => {
+        //                 console.log(LOG_TAG, '_uploadVoiceFile resolve');
+        //                 this.pushToVoicesArray(fsPath, uriString, true);
+        //             },
+        //             (rejectRes) => {
+        //                 console.log(LOG_TAG, `_uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
+        //                 this.pushToVoicesArray(fsPath, uriString, false);
+        //             }
+        //         ).catch((ex) => {
+        //             console.log(LOG_TAG, `_uploadVoiceFile exception =${JSON.stringify(ex)}`);
+        //             this.pushToVoicesArray(fsPath, uriString, false);
+        //         });
+        //     }
+        // );
     }
 
-    _uploadVoiceFile(name, fileURIString) {
+    pushToVoicesArray(fsPath, uriString, isUpload) {
+        this.voiceRecords.push({
+            name: fsPath,
+            selected: false,
+            uri: uriString,
+            isUpload: isUpload
+        });
+        this.setState({
+            dataSource: this.ds.cloneWithRows(this.voiceRecords),
+        })
+    }
+
+    uploadVoiceFile(name, fileURIString) {
         let body = new FormData();
         // let fileURIString = 'file:///storage/emulated/0/Android/data/com.sadussky.redux/files/image-fad3e669-7113-49e1-ac39-d2346b2b678c.jpg';
         // let url = 'http://www.sadussky.com/examples/apk/' + StringUtils.uuid()+'.jpg';
@@ -228,7 +307,6 @@ class TestAudioToolkit extends React.Component {
         //     type: 'image/jpg',
         //     name: 'headImage.jpg',
         // });
-
         body.append('photoImg', {
             uri: fileURIString,
             type: 'video/mpeg4',
@@ -239,35 +317,9 @@ class TestAudioToolkit extends React.Component {
             "Accept": "multipart/form-data",
             "Content-Type": "multipart/form-data",
         }
-
-        SATFetch.post(url, body, header, true)
-            .then((response) => {
-                console.log(LOG_TAG, 'SATFetch.post resolve');
-                this.voiceRecords.push({
-                    name: name,
-                    selected: false,
-                    uri: fileURIString
-                });
-                console.log(LOG_TAG, `voiceRecords=${JSON.stringify(this.voiceRecords)}`);
-                this.setState({
-                    dataSource: this.ds.cloneWithRows(this.voiceRecords),
-                })
-
-                this._prepareRecorder();
-            }).catch((err) => {
-            this._prepareRecorder();
-        });
-
+        return SATFetch.post(url, body, header, true);
     }
 
-
-    _onEndReached() {
-
-    }
-
-    _onRefreshData() {
-
-    }
 
     render() {
         return (
@@ -325,16 +377,8 @@ class TestAudioToolkit extends React.Component {
                     </TouchableOpacity>
 
                 </View>
-
-
+                {this.renderRecordBtn()}
                 {this.renderListView()}
-                {/*<View style={styles.buttonContainer}>
-                 <TouchableOpacity
-                 style={[styles.button, {marginTop: 20}]}
-                 onPress={() => this._getFilePathAndUploadFileToServer()}>
-                 <Text style={styles.text_btn}>UploadFile</Text>
-                 </TouchableOpacity>
-                 </View>*/}
                 <Text style={styles.errorMessage}>{this.state.error}</Text>
             </View>
         )
@@ -400,6 +444,8 @@ class TestAudioToolkit extends React.Component {
                         <Text style={styles.text}>
                             {rowData.name}
                         </Text>
+                        <Image style={styles.image_state}
+                               source={ rowData.isUpload ? image_select : image_unselect }/>
                     </View>
                 </View>
             </TouchableHighlight>
@@ -434,6 +480,67 @@ class TestAudioToolkit extends React.Component {
                 }}/>
         );
     }
+
+
+    _onStartShouldSetResponder(evt) {
+        console.log(LOG_TAG, '_onStartShouldSetResponder');
+        return true;
+    }
+
+    _onMoveShouldSetResponder(evt) {
+        console.log(LOG_TAG, '_onMoveShouldSetResponder');
+        return true;
+    }
+
+    _onResponderGrant(evt) {
+        console.log(LOG_TAG, '_onResponderGrant');
+        this.startRecord();
+    }
+
+    _onResponderReject(evt) {
+        console.log(LOG_TAG, '_onResponderReject');
+        this.stopRecord();
+    }
+
+    _onResponderMove(evt) {
+        // console.log(LOG_TAG, '_onResponderMove');
+    }
+
+    _onResponderRelease(evt) {
+        console.log(LOG_TAG, '_onResponderRelease');
+        this.stopRecord();
+    }
+
+
+    _onResponderTerminationRequest(evt) {
+        console.log(LOG_TAG, '_onResponderTerminationRequest');
+        return true;
+    }
+
+
+    _onResponderTerminate(evt) {
+        console.log(LOG_TAG, '_onResponderTerminate');
+    }
+
+    renderRecordBtn() {
+        return (
+            <View
+                style={styles.btn_record}
+                onStartShouldSetResponder={() => this._onStartShouldSetResponder()}
+                onMoveShouldSetResponder={() => this._onMoveShouldSetResponder()}
+                onResponderGrant={() => this._onResponderGrant()}
+                onResponderReject={() => this._onResponderReject()}
+                onResponderMove={() => this._onResponderMove()}
+                onResponderRelease={() => this._onResponderRelease()}
+                onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
+                onResponderTerminate={() => this._onResponderTerminate()}
+            >
+                <Text style={styles.record_btn}>按住 说话</Text>
+            </View>
+        )
+    }
+
+
 }
 
 var styles = StyleSheet.create({
@@ -491,12 +598,39 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         backgroundColor: '#F6F6F6',
+        alignItems:'center'
     },
     thumb: {
         width: 64,
         height: 64,
     },
-    text: {},
+    text: {
+        flex: 1
+    },
+    record_btn: {
+        borderRadius: 5,
+        borderColor: '#313131',
+        borderWidth: MIMIN_PX,
+        paddingLeft: 30,
+        paddingRight: 30,
+        paddingTop: 5,
+        paddingBottom: 5,
+    },
+
+    image_state: {
+        resizeMode: Image.resizeMode.contain,
+        width: 32,
+        height: 32,
+        marginLeft: 32,
+        alignItems: 'center'
+    },
+    btn_record:{
+        width:120,
+        height:32,
+        marginTop:12,
+        marginBottom:12,
+        alignSelf:'center'
+    }
 });
 
 export default TestAudioToolkit;
