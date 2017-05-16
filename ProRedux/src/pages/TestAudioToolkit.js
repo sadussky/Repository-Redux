@@ -368,15 +368,15 @@ class TestAudioToolkit extends React.Component {
                     </Text>
                 </View>
 
-                <View style={styles.buttonContainer}>
+                {/*<View style={styles.buttonContainer}>
                     <TouchableOpacity
                         style={styles.button}
                         disabled={this.state.recordButtonDisabled}
                         onPress={() => this._toggleRecord()}>
                         <Text style={styles.text_btn}>{this.state.recordButton}</Text>
                     </TouchableOpacity>
+                </View>*/}
 
-                </View>
                 {this.renderRecordBtn()}
                 {this.renderListView()}
                 <Text style={styles.errorMessage}>{this.state.error}</Text>
