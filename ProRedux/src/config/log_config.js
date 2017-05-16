@@ -8,7 +8,7 @@
  */
 
 
-import * as env from './env';
+import * as env from './env_config';
 import * as FileUtils from '../generally/utils/FileUtils';
 import TimeUtils from '../generally/utils/TimeUtils';
 const LOG_TAG = 'TEST##log_config';
