@@ -96,6 +96,7 @@ class TestAudioToolkit extends React.Component {
             stopButtonDisabled: !this.player || !this.player.canStop,
             playButtonDisabled: !this.player || !this.player.canPlay || this.recorder.isRecording,
             recordButtonDisabled: !this.recorder || (this.player && !this.player.isStopped),
+            isRecording: this.recorder && this.recorder.isRecording ? true : false,
         });
     }
 
@@ -230,17 +231,16 @@ class TestAudioToolkit extends React.Component {
     }
 
     stopRecord() {
-        if (this.recorder.state === MediaStates.RECORDING) {
-            this.recorder.stop((err) => {
-                if (err) {
-                    console.log(LOG_TAG, `stopRecord occur error %error%=${JSON.stringify(err)}`);
-                    this._reloadRecorder();
-                } else {
-                    this.onRecordSuccess();
-                }
+        console.log(LOG_TAG, `stopRecord current state= ${this.recorder.state}`);
+        this.recorder && this.recorder.stop((err) => {
+            if (err) {
+                console.log(LOG_TAG, `stopRecord occur error %error%=${JSON.stringify(err)}`);
                 this._reloadRecorder();
-            });
-        }
+            } else {
+                this.onRecordSuccess();
+                this._reloadRecorder();
+            }
+        });
     }
 
     onRecordSuccess() {
@@ -369,13 +369,13 @@ class TestAudioToolkit extends React.Component {
                 </View>
 
                 {/*<View style={styles.buttonContainer}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        disabled={this.state.recordButtonDisabled}
-                        onPress={() => this._toggleRecord()}>
-                        <Text style={styles.text_btn}>{this.state.recordButton}</Text>
-                    </TouchableOpacity>
-                </View>*/}
+                 <TouchableOpacity
+                 style={styles.button}
+                 disabled={this.state.recordButtonDisabled}
+                 onPress={() => this._toggleRecord()}>
+                 <Text style={styles.text_btn}>{this.state.recordButton}</Text>
+                 </TouchableOpacity>
+                 </View>*/}
 
                 {this.renderRecordBtn()}
                 {this.renderListView()}
@@ -523,6 +523,8 @@ class TestAudioToolkit extends React.Component {
     }
 
     renderRecordBtn() {
+        let btnText = this.state.isRecording ? "松开结束" : "按住讲话";
+        let btnStyle = this.state.isRecording ? styles.btn_record_ing : styles.btn_record_normal;
         return (
             <View
                 style={styles.btn_record}
@@ -535,7 +537,15 @@ class TestAudioToolkit extends React.Component {
                 onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
                 onResponderTerminate={() => this._onResponderTerminate()}
             >
-                <Text style={styles.record_btn}>按住 说话</Text>
+                <Text
+                    onStartShouldSetResponder={() => {
+                        return false
+                    }}
+                    onMoveShouldSetResponder={() => {
+                        return false
+                    }}
+                    style={btnStyle}>{btnText}
+                </Text>
             </View>
         )
     }
@@ -598,7 +608,7 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         backgroundColor: '#F6F6F6',
-        alignItems:'center'
+        alignItems: 'center'
     },
     thumb: {
         width: 64,
@@ -607,7 +617,18 @@ var styles = StyleSheet.create({
     text: {
         flex: 1
     },
-    record_btn: {
+    btn_record_ing: {
+        borderRadius: 5,
+        borderColor: '#313131',
+        borderWidth: MIMIN_PX,
+        paddingLeft: 30,
+        paddingRight: 30,
+        paddingTop: 5,
+        paddingBottom: 5,
+        backgroundColor: '#31A131'
+    },
+
+    btn_record_normal: {
         borderRadius: 5,
         borderColor: '#313131',
         borderWidth: MIMIN_PX,
@@ -617,6 +638,7 @@ var styles = StyleSheet.create({
         paddingBottom: 5,
     },
 
+
     image_state: {
         resizeMode: Image.resizeMode.contain,
         width: 32,
@@ -624,12 +646,12 @@ var styles = StyleSheet.create({
         marginLeft: 32,
         alignItems: 'center'
     },
-    btn_record:{
-        width:120,
-        height:32,
-        marginTop:12,
-        marginBottom:12,
-        alignSelf:'center'
+    btn_record: {
+        width: 120,
+        height: 32,
+        marginTop: 12,
+        marginBottom: 12,
+        alignSelf: 'center'
     }
 });
 
