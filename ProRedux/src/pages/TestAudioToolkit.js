@@ -42,8 +42,6 @@ const {height, width} = Dimensions.get('window');
 const DEVICES_DENSITY = PixelRatio.get();
 const MIMIN_PX = 1 / PixelRatio.get();
 let filename = 'test.mp4';
-const image_state_conn = require('../generally/asset/Thumbnails/state_conn.jpg');
-const image_state_disconn = require('../generally/asset/Thumbnails/state_disconn.jpg');
 const image_select = require('../generally/asset/Thumbnails/icon_select.png');
 const image_unselect = require('../generally/asset/Thumbnails/icon_unselect.png');
 
