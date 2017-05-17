@@ -199,8 +199,8 @@ function doRequest(url, method, body, headers = null, isFormData) {
                         });
                     } else {
                         console.log(LOG_TAG, "Network response,we haven't got JSON!");
+                        resolve(resolveRes);
                     }
-                    resolve(resolveRes);
                 } else {
                     reject(resolveRes);
                 }

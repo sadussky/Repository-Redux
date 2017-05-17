@@ -10,7 +10,8 @@
 'use strict';
 import * as CONS from './metaTypeCons';
 import * as SATFetch from '../../generally/network/SATFetch';
-const LOG_TAG = 'TEST##timeoutScheduler';
+import * as symbol_cons from '../../constant/symbol_cons';
+const LOG_TAG = 'TEST##metaTypeMiddleware';
 
 
 function metaTypeMiddleware(_ref) {
@@ -21,10 +22,10 @@ function metaTypeMiddleware(_ref) {
             if (!action.metaType) {
                 return next(action);
             } else {
-                if (action.metaType === CONS.META_TYPE_CALLAPI) {
-                    handleWithMetaTypeCallAPI(_ref, action);
-                } else if (action.metaType === CONS.META_TYPE_DELAY) {
-                    handleWithMetaTypeDelay(_ref, action);
+                if (action.metaType === symbol_cons.SYMBOL_CALL_API) {
+                    return handleWithMetaTypeCallAPI(_ref, next, action);
+                } else if (action.metaType === symbol_cons.SYMBOL_TYPE_DELAY) {
+                    return handleWithMetaTypeDelay(_ref, next, action);
                 } else {
                     return next(action);
                 }
@@ -34,26 +35,60 @@ function metaTypeMiddleware(_ref) {
 }
 
 
-// action = {
-//     metaType: 'META_TYPE_CALLAPI',
-//     meta: {start},
-//     method: 'post',
-//     body: {},
-//     url: '',
-//     types: {
-//         start: '',
-//         success: '',
-//         failure: ''
-//     }
-// }
-
-function handleWithMetaTypeCallAPI(ref, action) {
+function handleWithMetaTypeCallAPI(ref, next, action) {
     var dispatch = ref.dispatch;
     var getState = ref.getState;
-    //TODO
+    const {
+        type,
+        metaType,
+        meta,
+        payload,
+        error,
+    } = action;
+    if (!meta) {
+        return next(action);
+    }
+    const {beforeCallApi, afterCallApi, callApi, types, callback} = meta;
+    if (
+        !Array.isArray(types)
+        || types.length !== 3
+        || !types.every(type => typeof type === 'string')) {
+        throw new Error('Expected an array of three string types.')
+    }
+    if (typeof callApi !== 'function') {
+        throw new Error('Expected callAPI to be a function.')
+    }
+    const [requestType, successType, failureType] = types;
+    beforeCallApi && beforeCallApi(getState());//before call Api
+    dispatch(Object.assign({}, payload, {type: requestType}));
+    return callApi().then(
+        (resolveRes) => {
+            afterCallApi && afterCallApi(true, dispatch, resolveRes);
+            dispatch(Object.assign({},
+                payload, {
+                    result: resolveRes,
+                    type: successType,
+                }));
+        }, (rejectRes) => {
+            afterCallApi && afterCallApi(false, dispatch, rejectRes);
+            dispatch(Object.assign({},
+                payload, {
+                    result: rejectRes,
+                    type: failureType,
+                }));
+        }
+    ).catch((err) => {
+        afterCallApi && afterCallApi(false, dispatch, err);
+        dispatch(Object.assign({},
+            payload, {
+                result: err,
+                type: failureType,
+            }));
+    });
+
 }
 
-function handleWithMetaTypeDelay(ref, action) {
+function handleWithMetaTypeDelay(ref, next, action) {
     var dispatch = ref.dispatch;
     var getState = ref.getState;
     //TODO
