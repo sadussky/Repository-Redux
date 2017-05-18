@@ -34,9 +34,12 @@ import {
     MediaStates
 } from 'react-native-audio-toolkit';
 
+import {transcode} from 'react-native-audio-transcoder'
 var RCTAudioRecorder = NativeModules.AudioRecorder;
+var RNFSManager = NativeModules.RNFSManager;
 import * as StringUtils  from  '../generally/utils/StringUtils';
 import * as SATFetch from  '../generally/network/SATFetch';
+import * as FileUtils from  '../generally/utils/FileUtils';
 const LOG_TAG = 'TEST##TestAudioToolkit';
 const {height, width} = Dimensions.get('window');
 const DEVICES_DENSITY = PixelRatio.get();
@@ -159,9 +162,9 @@ class TestAudioToolkit extends React.Component {
             bitrate: 256000,
             channels: 2,
             sampleRate: 44100,
-            quality: 'max'
+            quality: 'max',
             //format: 'ac3', // autodetected
-            //encoder: 'aac', // autodetected
+            // encoder: 'aac', // autodetected
         });
         this._updateState();
     }
@@ -244,6 +247,27 @@ class TestAudioToolkit extends React.Component {
     onRecordSuccess() {
         let fsPath = this.recorder.fsPath;
         let uriString = 'file://' + fsPath;
+        let fsPathMp3 = fsPath.replace('aac', 'mp3');
+        let destPathMp4= FileUtils.RNFSExternalDirectoryPath+'/tmp.mp4';
+        FileUtils.copyFile(fsPath,destPathMp4);
+        // transcode(fsPath, fsPathMp3)
+        //     .then(() => {
+        //         console.log(LOG_TAG, 'onRecordSuccess convert to mp3 success');
+        //         this.uploadVoiceFile(fsPathMp3, uriString).then(
+        //             (resolveRes) => {
+        //                 console.log(LOG_TAG, 'uploadVoiceFile resolve');
+        //                 this.pushToVoicesArray(fsPath, uriString, true);
+        //             },
+        //             (rejectRes) => {
+        //                 console.log(LOG_TAG, `uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
+        //                 this.pushToVoicesArray(fsPath, uriString, false);
+        //             }
+        //         ).catch((ex) => {
+        //             console.log(LOG_TAG, `uploadVoiceFile exception =${JSON.stringify(ex)}`);
+        //             this.pushToVoicesArray(fsPath, uriString, false);
+        //         });
+        //
+        //     });
         this.uploadVoiceFile(fsPath, uriString).then(
             (resolveRes) => {
                 console.log(LOG_TAG, 'uploadVoiceFile resolve');
@@ -257,41 +281,8 @@ class TestAudioToolkit extends React.Component {
             console.log(LOG_TAG, `uploadVoiceFile exception =${JSON.stringify(ex)}`);
             this.pushToVoicesArray(fsPath, uriString, false);
         });
-
-
-        // RCTAudioRecorder.getRecordFile(
-        //     this.fsVoiceName,
-        //     {},
-        //     (uriString) => {
-        //         console.log(LOG_TAG, `stopRecord success %uriString%=${uriString}`);
-        //         this.uploadVoiceFile(fsPath, uriString).then(
-        //             (resolveRes) => {
-        //                 console.log(LOG_TAG, '_uploadVoiceFile resolve');
-        //                 this.pushToVoicesArray(fsPath, uriString, true);
-        //             },
-        //             (rejectRes) => {
-        //                 console.log(LOG_TAG, `_uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
-        //                 this.pushToVoicesArray(fsPath, uriString, false);
-        //             }
-        //         ).catch((ex) => {
-        //             console.log(LOG_TAG, `_uploadVoiceFile exception =${JSON.stringify(ex)}`);
-        //             this.pushToVoicesArray(fsPath, uriString, false);
-        //         });
-        //     }
-        // );
     }
 
-    pushToVoicesArray(fsPath, uriString, isUpload) {
-        this.voiceRecords.push({
-            name: fsPath,
-            selected: false,
-            uri: uriString,
-            isUpload: isUpload
-        });
-        this.setState({
-            dataSource: this.ds.cloneWithRows(this.voiceRecords),
-        })
-    }
 
     uploadVoiceFile(name, fileURIString) {
         let body = new FormData();
@@ -316,6 +307,18 @@ class TestAudioToolkit extends React.Component {
             "Content-Type": "multipart/form-data",
         }
         return SATFetch.post(url, body, header, true);
+    }
+
+    pushToVoicesArray(fsPath, uriString, isUpload) {
+        this.voiceRecords.push({
+            name: fsPath,
+            selected: false,
+            uri: uriString,
+            isUpload: isUpload
+        });
+        this.setState({
+            dataSource: this.ds.cloneWithRows(this.voiceRecords),
+        })
     }
 
 
