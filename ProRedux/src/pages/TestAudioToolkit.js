@@ -248,8 +248,8 @@ class TestAudioToolkit extends React.Component {
         let fsPath = this.recorder.fsPath;
         let uriString = 'file://' + fsPath;
         let fsPathMp3 = fsPath.replace('aac', 'mp3');
-        let destPathMp4= FileUtils.RNFSExternalDirectoryPath+'/tmp.amr';
-        FileUtils.copyFile(fsPath,destPathMp4);
+        let destPathMp4 = FileUtils.RNFSExternalDirectoryPath + '/tmp.amr';
+        FileUtils.copyFile(fsPath, destPathMp4);
         // transcode(fsPath, fsPathMp3)
         //     .then(() => {
         //         console.log(LOG_TAG, 'onRecordSuccess convert to mp3 success');
@@ -483,6 +483,35 @@ class TestAudioToolkit extends React.Component {
     }
 
 
+    renderRecordBtn() {
+        let btnText = this.state.isRecording ? "松开结束" : "按住讲话";
+        let btnStyle = this.state.isRecording ? styles.btn_record_ing : styles.btn_record_normal;
+        return (
+            <View
+                style={styles.btn_record}
+                onStartShouldSetResponder={() => this._onStartShouldSetResponder()}
+                onMoveShouldSetResponder={() => this._onMoveShouldSetResponder()}
+                onResponderGrant={() => this._onResponderGrant()}
+                onResponderReject={() => this._onResponderReject()}
+                onResponderMove={() => this._onResponderMove()}
+                onResponderRelease={() => this._onResponderRelease()}
+                onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
+                onResponderTerminate={() => this._onResponderTerminate()}
+            >
+                <Text
+                    onStartShouldSetResponder={() => {
+                        return false
+                    }}
+                    onMoveShouldSetResponder={() => {
+                        return false
+                    }}
+                    style={btnStyle}>{btnText}
+                </Text>
+            </View>
+        )
+    }
+
+
     _onStartShouldSetResponder(evt) {
         console.log(LOG_TAG, '_onStartShouldSetResponder');
         return true;
@@ -522,35 +551,6 @@ class TestAudioToolkit extends React.Component {
     _onResponderTerminate(evt) {
         console.log(LOG_TAG, '_onResponderTerminate');
     }
-
-    renderRecordBtn() {
-        let btnText = this.state.isRecording ? "松开结束" : "按住讲话";
-        let btnStyle = this.state.isRecording ? styles.btn_record_ing : styles.btn_record_normal;
-        return (
-            <View
-                style={styles.btn_record}
-                onStartShouldSetResponder={() => this._onStartShouldSetResponder()}
-                onMoveShouldSetResponder={() => this._onMoveShouldSetResponder()}
-                onResponderGrant={() => this._onResponderGrant()}
-                onResponderReject={() => this._onResponderReject()}
-                onResponderMove={() => this._onResponderMove()}
-                onResponderRelease={() => this._onResponderRelease()}
-                onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
-                onResponderTerminate={() => this._onResponderTerminate()}
-            >
-                <Text
-                    onStartShouldSetResponder={() => {
-                        return false
-                    }}
-                    onMoveShouldSetResponder={() => {
-                        return false
-                    }}
-                    style={btnStyle}>{btnText}
-                </Text>
-            </View>
-        )
-    }
-
 
 }
 
