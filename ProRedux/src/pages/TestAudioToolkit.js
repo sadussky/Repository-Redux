@@ -157,14 +157,14 @@ class TestAudioToolkit extends React.Component {
         if (this.recorder) {
             this.recorder.destroy();
         }
-        this.fsVoiceName = StringUtils.uuid() + '.mp4';
+        this.fsVoiceName = StringUtils.uuid() + '.amr';
         this.recorder = new Recorder(this.fsVoiceName, {
             bitrate: 256000,
             channels: 2,
             sampleRate: 44100,
             quality: 'max',
-            //format: 'ac3', // autodetected
-            // encoder: 'aac', // autodetected
+            format: 'amr', // autodetected
+            encoder: 'amr', // autodetected
         });
         this._updateState();
     }
@@ -248,7 +248,7 @@ class TestAudioToolkit extends React.Component {
         let fsPath = this.recorder.fsPath;
         let uriString = 'file://' + fsPath;
         let fsPathMp3 = fsPath.replace('aac', 'mp3');
-        let destPathMp4= FileUtils.RNFSExternalDirectoryPath+'/tmp.mp4';
+        let destPathMp4= FileUtils.RNFSExternalDirectoryPath+'/tmp.amr';
         FileUtils.copyFile(fsPath,destPathMp4);
         // transcode(fsPath, fsPathMp3)
         //     .then(() => {
