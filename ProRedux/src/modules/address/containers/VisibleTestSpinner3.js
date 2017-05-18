@@ -13,7 +13,7 @@ import * as Actions from  '../actions/actions';
 
 const mapStateToProps = (state) => {
     return {
-        mixAddressObject: state.handleAddressUpdate.address_modules_a_mixobj,
+        address: state.address,
     }
 }
 

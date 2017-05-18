@@ -164,27 +164,27 @@ class TestSpinner3 extends Component {
             onSelectProvince,
             onSelectCity,
             onSelectArea,
-            mixAddressObject
+            address
         } = this.props;
-        if (mixAddressObject) {
+        if (address) {
             let array = [];
             let selectFuc = null;
             let curSelectCode = '';
             switch (index) {
                 case 0:
-                    array = mixAddressObject.provinceArray;
+                    array = address.provinceArray;
                     selectFuc = onSelectProvince;
-                    curSelectCode = mixAddressObject.curPCode;
+                    curSelectCode = address.curPCode;
                     break;
                 case 1:
-                    array = mixAddressObject.cityArray;
+                    array = address.cityArray;
                     selectFuc = onSelectCity;
-                    curSelectCode = mixAddressObject.curCCode;
+                    curSelectCode = address.curCCode;
                     break;
                 case 2:
-                    array = mixAddressObject.areaArray;
+                    array = address.areaArray;
                     selectFuc = onSelectArea;
-                    curSelectCode = mixAddressObject.curACode;
+                    curSelectCode = address.curACode;
                     break;
             }
             let views = [];
