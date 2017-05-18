@@ -50,11 +50,11 @@ class ProRedux extends Component {
 
     render() {
         // return this.renderTestListViwe();
-        return this.renderAddressPageView();
+        // return this.renderAddressPageView();
         // return this.renderContainer();
         // return this.renderTestRnPages();
         // return this.renderVoicePages();
-        // return this.renderVoiceToolkit();
+        return this.renderVoiceToolkit();
     }
 
     renderTestListViwe() {
