@@ -147,9 +147,8 @@ public class AudioPlayerModule extends ReactContextBaseJavaModule implements Med
 //        }
 
         // Try finding file on sdcard
-        extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
 //        extPath = Environment.getExternalStorageDirectory() + "/" + path;
-//          extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
+          extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
         file = new File(extPath);
         if (file.exists()) {
             return Uri.fromFile(file);
