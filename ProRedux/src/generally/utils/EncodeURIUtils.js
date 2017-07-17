@@ -1,0 +1,96 @@
+'use strict';
+var strictUriEncode = (str) => {
+    return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
+        return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+    });
+};
+var objectAssign = require('object-assign');
+
+function encode(value, opts) {
+    if (opts.encode) {
+        return opts.strict ? strictUriEncode(value) : encodeURIComponent(value);
+    }
+
+    return value;
+}
+
+exports.extract = function (str) {
+    return str.split('?')[1] || '';
+};
+
+exports.parse = function (str) {
+    var ret = Object.create(null);
+
+    if (typeof str !== 'string') {
+        return ret;
+    }
+
+    str = str.trim().replace(/^(\?|#|&)/, '');
+
+    if (!str) {
+        return ret;
+    }
+
+    str.split('&').forEach(function (param) {
+        var parts = param.replace(/\+/g, ' ').split('=');
+        var key = parts.shift();
+        var val = parts.length > 0 ? parts.join('=') : undefined;
+
+        key = decodeURIComponent(key);
+
+        val = val === undefined ? null : decodeURIComponent(val);
+
+        if (ret[key] === undefined) {
+            ret[key] = val;
+        } else if (Array.isArray(ret[key])) {
+            ret[key].push(val);
+        } else {
+            ret[key] = [ret[key], val];
+        }
+    });
+
+    return ret;
+};
+
+exports.stringify = function (obj, opts) {
+    var defaults = {
+        encode: true,
+        strict: true
+    };
+
+    opts = objectAssign(defaults, opts);
+
+    return obj ? Object.keys(obj).sort().map(function (key) {
+            var val = obj[key];
+
+            if (val === undefined) {
+                return '';
+            }
+
+            if (val === null) {
+                return encode(key, opts);
+            }
+
+            if (Array.isArray(val)) {
+                var result = [];
+
+                val.slice().forEach(function (val2) {
+                    if (val2 === undefined) {
+                        return;
+                    }
+
+                    if (val2 === null) {
+                        result.push(encode(key, opts));
+                    } else {
+                        result.push(encode(key, opts) + '=' + encode(val2, opts));
+                    }
+                });
+
+                return result.join('&');
+            }
+
+            return encode(key, opts) + '=' + encode(val, opts);
+        }).filter(function (x) {
+            return x.length > 0;
+        }).join('&') : '';
+};

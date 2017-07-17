@@ -18,17 +18,14 @@ import {
 import  * as apiAdress from '../api/apiAddress';
 
 
-function onInitMixAddressObject(action) {
-    return {
-        curPCode: action.pCode,
-        curCCode: action.cCode,
-        curACode: action.aCode,
-        provinceArray: apiAdress.fetchProvince(),
-        cityArray: [],
-        areaArray: []
-    }
+const addressInitState = {
+    curPCode: '',
+    curCCode: '',
+    curACode: '',
+    provinceArray: [],
+    cityArray: [],
+    areaArray: []
 }
-
 
 /**
  * 省代码变化时，更新地址信息
@@ -140,54 +137,41 @@ function onSelectArea(obj, areaCode) {
 }
 
 
-function handleAddressUpdate(state = {}, action) {
+function address(state = addressInitState, action) {
     switch (action.type) {
         case TYPE_ON_INIT_MIX_OBJECT :
-            return Object.assign({}, state,
-                {[action.stateHodler]: onInitMixAddressObject(action)});
+            return Object.assign({}, state, {
+                curPCode: action.pCode,
+                curCCode: action.cCode,
+                curACode: action.aCode,
+                provinceArray: apiAdress.fetchProvince(),
+                cityArray: [],
+                areaArray: []
+            });
         case TYPE_ON_UPDATE_PROVINCE_DATA :
-            let srcObj1 = state[action.stateHodler];
-            if (srcObj1) {
-                srcObj1.curPCode = action.provinceCode;
-                return Object.assign({}, state,
-                    {[action.stateHodler]: onUpdateProvinceData(srcObj1)});
+            if (state) {
+                state.curPCode = action.provinceCode;
+                return Object.assign({}, onUpdateProvinceData(state));
             }
             break;
         case TYPE_ON_UPDATE_CITY_DATA :
-            let srcObj2 = state[action.stateHodler];
-            if (srcObj2) {
-                srcObj2.curCCode = action.cityCode;
-                return Object.assign({}, state,
-                    {[action.stateHodler]: onUpdateCityData(srcObj2)});
+            if (state) {
+                state.curCCode = action.cityCode;
+                return Object.assign({}, onUpdateCityData(state));
             }
             break;
         case TYPE_ON_SELECT_PROVINCE :
-            let srcObj3 = state[action.stateHodler];
-            if (srcObj3) {
-                return Object.assign({}, state,
-                    {[action.stateHodler]: onSelectProvince(srcObj3, action.provinceCode)});
-            }
-            break;
+            return onSelectProvince(state, action.provinceCode);
         case TYPE_ON_SELECT_CITY :
-            let srcObj4 = state[action.stateHodler];
-            if (srcObj4) {
-                return Object.assign({}, state,
-                    {[action.stateHodler]: onSelectCity(srcObj4, action.cityCode)});
-            }
-            break;
+            return onSelectCity(state, action.cityCode);
         case TYPE_ON_SELECT_AREA :
-            let srcObj5 = state[action.stateHodler];
-            if (srcObj5) {
-                return Object.assign({}, state,
-                    {[action.stateHodler]: onSelectArea(srcObj5, action.areaCode)});
-            }
-            break;
+            return onSelectArea(state, action.areaCode);
     }
     return state;
 }
 
 const rootReducer = combineReducers({
-    handleAddressUpdate
+    address
 })
 
 export default rootReducer;

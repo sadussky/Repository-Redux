@@ -176,32 +176,33 @@ function doRequest(url, method, body, headers = null, isFormData) {
 
     return new Promise((resolve, reject) => {
         fetch(url, myInit).then(
-            (resRet) => {
+            (resolveRes) => {
                 console.log(LOG_TAG,
                     `fetch -END- %URL%=${url},` +
                     `%uuid%=${fetchUUID},` +
                     `%init params%=${JSON.stringify(myInit)},` +
-                    `%response status%=${resRet.status},` +
-                    `%response status desc%=${CONS_STATUS_OBJECT[resRet.status]},` +
-                    `%response response%=${JSON.stringify(resRet)}`);
+                    `%response status%=${resolveRes.status},` +
+                    `%response status desc%=${CONS_STATUS_OBJECT[resolveRes.status]},` +
+                    `%response response%=${JSON.stringify(resolveRes)}`);
                 // console.log(LOG_TAG, `\n type=${response.type}`);
                 // console.log(LOG_TAG, `\n status=${response.status}`);
                 // console.log(LOG_TAG, `\n ok=${response.ok}`);
                 // console.log(LOG_TAG, `\n headers=${JSON.stringify(response.headers)}`);
                 // console.log(LOG_TAG, `\n url=${response.url}`);
                 // console.log(LOG_TAG, `\n response=${JSON.stringify(response)}`);
-                if (resRet.ok) {
-                    var contentType = resRet.headers.get("content-type");
+                if (resolveRes.ok) {
+                    var contentType = resolveRes.headers.get("content-type");
                     if (contentType && contentType.indexOf("application/json") !== -1) {
-                        return resRet.json().then(function (json) {
+                        return resolveRes.json().then(function (json) {
                             // process your JSON further
                             resolve(json);
-                            return;
                         });
+                    } else {
+                        console.log(LOG_TAG, "Network response,we haven't got JSON!");
+                        resolve(resolveRes);
                     }
-                    resolve(resRet);
                 } else {
-                    reject(resRet);
+                    reject(resolveRes);
                 }
             },
             (rejectRes) => {

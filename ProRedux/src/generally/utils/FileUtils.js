@@ -11,16 +11,17 @@
 import * as Base64 from './Base64';
 var RNFSManager = require('react-native').NativeModules.RNFSManager;
 const RNFS = require('react-native-fs');
-export  const MainBundlePath = RNFSManager.RNFSMainBundlePath;
-export  const CachesDirectoryPath = RNFSManager.RNFSCachesDirectoryPath;
-export  const DocumentDirectoryPath = RNFSManager.RNFSDocumentDirectoryPath;
-export  const ExternalDirectoryPath = RNFSManager.RNFSExternalDirectoryPath;
-export  const ExternalStorageDirectoryPath = RNFSManager.RNFSExternalStorageDirectoryPath;
-export  const TemporaryDirectoryPath = RNFSManager.RNFSTemporaryDirectoryPath;
-export  const LibraryDirectoryPath = RNFSManager.RNFSLibraryDirectoryPath;
-export  const PicturesDirectoryPath = RNFSManager.RNFSPicturesDirectoryPath;
-export  const LOCAL_LOG_PATH = `${RNFS.ExternalDirectoryPath}/log.txt`;
-export  const LOG_TAG = 'TEST##FileUtils';
+export const MainBundlePath = RNFSManager.RNFSMainBundlePath;
+export const CachesDirectoryPath = RNFSManager.RNFSCachesDirectoryPath;
+export const DocumentDirectoryPath = RNFSManager.RNFSDocumentDirectoryPath;
+export const ExternalDirectoryPath = RNFSManager.RNFSExternalDirectoryPath;
+export const ExternalStorageDirectoryPath = RNFSManager.RNFSExternalStorageDirectoryPath;
+export const RNFSExternalDirectoryPath = RNFSManager.RNFSExternalDirectoryPath;
+export const TemporaryDirectoryPath = RNFSManager.RNFSTemporaryDirectoryPath;
+export const LibraryDirectoryPath = RNFSManager.RNFSLibraryDirectoryPath;
+export const PicturesDirectoryPath = RNFSManager.RNFSPicturesDirectoryPath;
+export const LOCAL_LOG_PATH = `${RNFS.ExternalDirectoryPath}/log.txt`;
+export const LOG_TAG = 'TEST##FileUtils';
 
 export function writeFile(filepath, content) {
     return new Promise((resolve, reject) => {
@@ -45,5 +46,34 @@ export function appendFile(filepath, content) {
                     reject(rejectRes);
                 });
 
+    })
+}
+
+export function moveFile(filepath, destPath,) {
+    return new Promise((resolve, reject) => {
+        RNFSManager.moveFile(filepath, destPath)
+            .then(
+                (resovleRes) => {
+                    console.log(LOG_TAG, `moveFile resolve= ${resovleRes}`);
+                    resolve(resovleRes);
+                }, (rejectRes) => {
+                    console.log(LOG_TAG, `moveFile resolve= ${rejectRes}`);
+                    reject(rejectRes);
+                });
+    })
+}
+
+
+export function copyFile(filepath, destPath,) {
+    return new Promise((resolve, reject) => {
+        RNFSManager.copyFile(filepath, destPath)
+            .then(
+                (resovleRes) => {
+                    console.log(LOG_TAG, `copyFile resolve= ${resovleRes}`);
+                    resolve(resovleRes);
+                }, (rejectRes) => {
+                    console.log(LOG_TAG, `copyFile resolve= ${rejectRes}`);
+                    reject(rejectRes);
+                });
     })
 }

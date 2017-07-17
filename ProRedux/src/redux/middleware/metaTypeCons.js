@@ -8,5 +8,5 @@
  */
 
 
-export const  META_TYPE_CALLAPI= 'META_TYPE_CALLAPI';
-export const  META_TYPE_DELAY= 'META_TYPE_DELAY';
+export const META_TYPE_CALL_API = 'META_TYPE_CALL_API';
+export const META_TYPE_DELAY = 'META_TYPE_DELAY';

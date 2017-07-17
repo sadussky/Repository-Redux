@@ -10,13 +10,19 @@
 
 function test() {
 
-    const addresses = this.props.addresses;
-    let filterId ='';
-    addresses.forEach((data, index) => {
-        if (data.status == 1) {
-            filterId= data.id;
-        }
-    });
-
+    // const addresses = this.props.addresses;
+    // let filterId ='';
+    // addresses.forEach((data, index) => {
+    //     if (data.status == 1) {
+    //         filterId= data.id;
+    //     }
+    // });
+    //
+    //
+    // let dispatch = store.dispatch();
+    // let action = getAction();
+    // let thunk_dispatch =  thunkMiddleware(store)(next) ;
+    // let log_dispatch = ENCLoggerMiddleware(store)(thunk_dispatch);
+    // store.dispatch = log_dispatch;
 
 }

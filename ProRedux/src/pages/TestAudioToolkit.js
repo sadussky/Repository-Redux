@@ -34,16 +34,17 @@ import {
     MediaStates
 } from 'react-native-audio-toolkit';
 
+import {transcode} from 'react-native-audio-transcoder'
 var RCTAudioRecorder = NativeModules.AudioRecorder;
+var RNFSManager = NativeModules.RNFSManager;
 import * as StringUtils  from  '../generally/utils/StringUtils';
 import * as SATFetch from  '../generally/network/SATFetch';
+import * as FileUtils from  '../generally/utils/FileUtils';
 const LOG_TAG = 'TEST##TestAudioToolkit';
 const {height, width} = Dimensions.get('window');
 const DEVICES_DENSITY = PixelRatio.get();
 const MIMIN_PX = 1 / PixelRatio.get();
 let filename = 'test.mp4';
-const image_state_conn = require('../generally/asset/Thumbnails/state_conn.jpg');
-const image_state_disconn = require('../generally/asset/Thumbnails/state_disconn.jpg');
 const image_select = require('../generally/asset/Thumbnails/icon_select.png');
 const image_unselect = require('../generally/asset/Thumbnails/icon_unselect.png');
 
@@ -96,6 +97,7 @@ class TestAudioToolkit extends React.Component {
             stopButtonDisabled: !this.player || !this.player.canStop,
             playButtonDisabled: !this.player || !this.player.canPlay || this.recorder.isRecording,
             recordButtonDisabled: !this.recorder || (this.player && !this.player.isStopped),
+            isRecording: this.recorder && this.recorder.isRecording ? true : false,
         });
     }
 
@@ -155,14 +157,14 @@ class TestAudioToolkit extends React.Component {
         if (this.recorder) {
             this.recorder.destroy();
         }
-        this.fsVoiceName = StringUtils.uuid() + '.mp4';
+        this.fsVoiceName = StringUtils.uuid() + '.amr';
         this.recorder = new Recorder(this.fsVoiceName, {
             bitrate: 256000,
             channels: 2,
             sampleRate: 44100,
-            quality: 'max'
-            //format: 'ac3', // autodetected
-            //encoder: 'aac', // autodetected
+            quality: 'max',
+            format: 'amr', // autodetected
+            encoder: 'amr', // autodetected
         });
         this._updateState();
     }
@@ -230,22 +232,42 @@ class TestAudioToolkit extends React.Component {
     }
 
     stopRecord() {
-        if (this.recorder.state === MediaStates.RECORDING) {
-            this.recorder.stop((err) => {
-                if (err) {
-                    console.log(LOG_TAG, `stopRecord occur error %error%=${JSON.stringify(err)}`);
-                    this._reloadRecorder();
-                } else {
-                    this.onRecordSuccess();
-                }
+        console.log(LOG_TAG, `stopRecord current state= ${this.recorder.state}`);
+        this.recorder && this.recorder.stop((err) => {
+            if (err) {
+                console.log(LOG_TAG, `stopRecord occur error %error%=${JSON.stringify(err)}`);
                 this._reloadRecorder();
-            });
-        }
+            } else {
+                this.onRecordSuccess();
+                this._reloadRecorder();
+            }
+        });
     }
 
     onRecordSuccess() {
         let fsPath = this.recorder.fsPath;
         let uriString = 'file://' + fsPath;
+        let fsPathMp3 = fsPath.replace('aac', 'mp3');
+        let destPathMp4 = FileUtils.RNFSExternalDirectoryPath + '/tmp.amr';
+        FileUtils.copyFile(fsPath, destPathMp4);
+        // transcode(fsPath, fsPathMp3)
+        //     .then(() => {
+        //         console.log(LOG_TAG, 'onRecordSuccess convert to mp3 success');
+        //         this.uploadVoiceFile(fsPathMp3, uriString).then(
+        //             (resolveRes) => {
+        //                 console.log(LOG_TAG, 'uploadVoiceFile resolve');
+        //                 this.pushToVoicesArray(fsPath, uriString, true);
+        //             },
+        //             (rejectRes) => {
+        //                 console.log(LOG_TAG, `uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
+        //                 this.pushToVoicesArray(fsPath, uriString, false);
+        //             }
+        //         ).catch((ex) => {
+        //             console.log(LOG_TAG, `uploadVoiceFile exception =${JSON.stringify(ex)}`);
+        //             this.pushToVoicesArray(fsPath, uriString, false);
+        //         });
+        //
+        //     });
         this.uploadVoiceFile(fsPath, uriString).then(
             (resolveRes) => {
                 console.log(LOG_TAG, 'uploadVoiceFile resolve');
@@ -259,41 +281,8 @@ class TestAudioToolkit extends React.Component {
             console.log(LOG_TAG, `uploadVoiceFile exception =${JSON.stringify(ex)}`);
             this.pushToVoicesArray(fsPath, uriString, false);
         });
-
-
-        // RCTAudioRecorder.getRecordFile(
-        //     this.fsVoiceName,
-        //     {},
-        //     (uriString) => {
-        //         console.log(LOG_TAG, `stopRecord success %uriString%=${uriString}`);
-        //         this.uploadVoiceFile(fsPath, uriString).then(
-        //             (resolveRes) => {
-        //                 console.log(LOG_TAG, '_uploadVoiceFile resolve');
-        //                 this.pushToVoicesArray(fsPath, uriString, true);
-        //             },
-        //             (rejectRes) => {
-        //                 console.log(LOG_TAG, `_uploadVoiceFile reject=${JSON.stringify(rejectRes)}`);
-        //                 this.pushToVoicesArray(fsPath, uriString, false);
-        //             }
-        //         ).catch((ex) => {
-        //             console.log(LOG_TAG, `_uploadVoiceFile exception =${JSON.stringify(ex)}`);
-        //             this.pushToVoicesArray(fsPath, uriString, false);
-        //         });
-        //     }
-        // );
     }
 
-    pushToVoicesArray(fsPath, uriString, isUpload) {
-        this.voiceRecords.push({
-            name: fsPath,
-            selected: false,
-            uri: uriString,
-            isUpload: isUpload
-        });
-        this.setState({
-            dataSource: this.ds.cloneWithRows(this.voiceRecords),
-        })
-    }
 
     uploadVoiceFile(name, fileURIString) {
         let body = new FormData();
@@ -318,6 +307,18 @@ class TestAudioToolkit extends React.Component {
             "Content-Type": "multipart/form-data",
         }
         return SATFetch.post(url, body, header, true);
+    }
+
+    pushToVoicesArray(fsPath, uriString, isUpload) {
+        this.voiceRecords.push({
+            name: fsPath,
+            selected: false,
+            uri: uriString,
+            isUpload: isUpload
+        });
+        this.setState({
+            dataSource: this.ds.cloneWithRows(this.voiceRecords),
+        })
     }
 
 
@@ -368,15 +369,15 @@ class TestAudioToolkit extends React.Component {
                     </Text>
                 </View>
 
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        disabled={this.state.recordButtonDisabled}
-                        onPress={() => this._toggleRecord()}>
-                        <Text style={styles.text_btn}>{this.state.recordButton}</Text>
-                    </TouchableOpacity>
+                {/*<View style={styles.buttonContainer}>
+                 <TouchableOpacity
+                 style={styles.button}
+                 disabled={this.state.recordButtonDisabled}
+                 onPress={() => this._toggleRecord()}>
+                 <Text style={styles.text_btn}>{this.state.recordButton}</Text>
+                 </TouchableOpacity>
+                 </View>*/}
 
-                </View>
                 {this.renderRecordBtn()}
                 {this.renderListView()}
                 <Text style={styles.errorMessage}>{this.state.error}</Text>
@@ -482,6 +483,35 @@ class TestAudioToolkit extends React.Component {
     }
 
 
+    renderRecordBtn() {
+        let btnText = this.state.isRecording ? "松开结束" : "按住讲话";
+        let btnStyle = this.state.isRecording ? styles.btn_record_ing : styles.btn_record_normal;
+        return (
+            <View
+                style={styles.btn_record}
+                onStartShouldSetResponder={() => this._onStartShouldSetResponder()}
+                onMoveShouldSetResponder={() => this._onMoveShouldSetResponder()}
+                onResponderGrant={() => this._onResponderGrant()}
+                onResponderReject={() => this._onResponderReject()}
+                onResponderMove={() => this._onResponderMove()}
+                onResponderRelease={() => this._onResponderRelease()}
+                onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
+                onResponderTerminate={() => this._onResponderTerminate()}
+            >
+                <Text
+                    onStartShouldSetResponder={() => {
+                        return false
+                    }}
+                    onMoveShouldSetResponder={() => {
+                        return false
+                    }}
+                    style={btnStyle}>{btnText}
+                </Text>
+            </View>
+        )
+    }
+
+
     _onStartShouldSetResponder(evt) {
         console.log(LOG_TAG, '_onStartShouldSetResponder');
         return true;
@@ -521,25 +551,6 @@ class TestAudioToolkit extends React.Component {
     _onResponderTerminate(evt) {
         console.log(LOG_TAG, '_onResponderTerminate');
     }
-
-    renderRecordBtn() {
-        return (
-            <View
-                style={styles.btn_record}
-                onStartShouldSetResponder={() => this._onStartShouldSetResponder()}
-                onMoveShouldSetResponder={() => this._onMoveShouldSetResponder()}
-                onResponderGrant={() => this._onResponderGrant()}
-                onResponderReject={() => this._onResponderReject()}
-                onResponderMove={() => this._onResponderMove()}
-                onResponderRelease={() => this._onResponderRelease()}
-                onResponderTerminationRequest={() => this._onResponderTerminationRequest()}
-                onResponderTerminate={() => this._onResponderTerminate()}
-            >
-                <Text style={styles.record_btn}>按住 说话</Text>
-            </View>
-        )
-    }
-
 
 }
 
@@ -598,7 +609,7 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         backgroundColor: '#F6F6F6',
-        alignItems:'center'
+        alignItems: 'center'
     },
     thumb: {
         width: 64,
@@ -607,7 +618,18 @@ var styles = StyleSheet.create({
     text: {
         flex: 1
     },
-    record_btn: {
+    btn_record_ing: {
+        borderRadius: 5,
+        borderColor: '#313131',
+        borderWidth: MIMIN_PX,
+        paddingLeft: 30,
+        paddingRight: 30,
+        paddingTop: 5,
+        paddingBottom: 5,
+        backgroundColor: '#31A131'
+    },
+
+    btn_record_normal: {
         borderRadius: 5,
         borderColor: '#313131',
         borderWidth: MIMIN_PX,
@@ -617,6 +639,7 @@ var styles = StyleSheet.create({
         paddingBottom: 5,
     },
 
+
     image_state: {
         resizeMode: Image.resizeMode.contain,
         width: 32,
@@ -624,12 +647,12 @@ var styles = StyleSheet.create({
         marginLeft: 32,
         alignItems: 'center'
     },
-    btn_record:{
-        width:120,
-        height:32,
-        marginTop:12,
-        marginBottom:12,
-        alignSelf:'center'
+    btn_record: {
+        width: 120,
+        height: 32,
+        marginTop: 12,
+        marginBottom: 12,
+        alignSelf: 'center'
     }
 });
 

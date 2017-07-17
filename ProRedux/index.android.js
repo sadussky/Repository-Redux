@@ -23,12 +23,11 @@ import React, {Component} from 'react';
 import CodePush from "react-native-code-push";
 import config from './src/config';
 import {TestTodos} from './src/modules/todos/containers/TestTodos';
-import {TestReduxReducers} from './src/modules/redux/containers/TestReduxReducers';
 import TestRn from './src/pages/TestRn';
 import TestListView from './src/pages/TestListView';
-import VoicePage from './src/pages/Voice.page';
-import {AddressPage} from './src/modules/address/pages/Address.page';
 import TestAudioToolkit  from './src/pages/TestAudioToolkit';
+import {AddressPage} from './src/modules/address/pages/Address.page';
+
 
 
 let codePushOptions = {
@@ -51,11 +50,11 @@ class ProRedux extends Component {
 
     render() {
         // return this.renderTestListViwe();
-        // return this.renderProviderView();
+        return this.renderAddressPageView();
         // return this.renderContainer();
         // return this.renderTestRnPages();
         // return this.renderVoicePages();
-        return this.renderVoiceToolkit();
+        // return this.renderVoiceToolkit();
     }
 
     renderTestListViwe() {
@@ -64,7 +63,7 @@ class ProRedux extends Component {
         )
     }
 
-    renderProviderView() {
+    renderAddressPageView() {
         return (
             <AddressPage/>
         );

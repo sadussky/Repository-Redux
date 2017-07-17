@@ -23,6 +23,7 @@
     "react-native-alphabetlistview": "^0.2.0",
     "react-native-animatable": "^0.6.1",
     "react-native-audio-toolkit": "^1.0.5",
+    "react-native-audio-transcoder": "^0.1.0",
     "react-native-button": "^1.6.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-code-push": "^1.17.2-beta",

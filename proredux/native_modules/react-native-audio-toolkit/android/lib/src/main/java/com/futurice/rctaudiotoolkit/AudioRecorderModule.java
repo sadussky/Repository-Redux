@@ -128,9 +128,9 @@ public class AudioRecorderModule extends ReactContextBaseJavaModule implements
         if (URLUtil.isValidUrl(path)) {
             uri = Uri.parse(path);
         } else {
-//            String extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
+            String extPath = new ContextWrapper(this.context).getFilesDir() + "/" + path;
             //String extPath = Environment.getExternalStorageDirectory() + "/" + path;
-            String extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
+//            String extPath = Environment.getExternalStoragePublicDirectory("dskj-voice") + "/" + path;
             File file = new File(extPath);
             uri = Uri.fromFile(file);
         }
